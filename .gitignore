@@ -9,3 +9,5 @@ package-lock.json
 
 # Картинки НЕ игнорируем — они должны попасть в репозиторий
 # public/images/
+__pycache__
+vite.config.js.timestamp*
