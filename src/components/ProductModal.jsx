@@ -1,0 +1,279 @@
+import { useEffect, useRef, useState } from 'react'
+import { X, Send } from 'lucide-react'
+import { calcPrice, formatPrice, formatWeight, cn } from '@/lib/utils'
+import { CONTACTS, MESSAGE_TEMPLATE } from '@/config/pricing'
+
+// Иконки мессенджеров (SVG inline)
+function TelegramIcon({ size = 20 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+    </svg>
+  )
+}
+
+function VKIcon({ size = 20 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.391 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.864-.525-2.05-1.727-1.033-1-1.49-1.135-1.744-1.135-.356 0-.458.102-.458.593v1.575c0 .424-.135.678-1.253.678-1.846 0-3.896-1.118-5.335-3.202C4.624 10.857 4.03 8.57 4.03 8.096c0-.254.102-.491.593-.491h1.744c.44 0 .61.203.78.677.864 2.49 2.303 4.675 2.896 4.675.22 0 .322-.102.322-.66V9.721c-.068-1.186-.695-1.287-.695-1.71 0-.203.17-.407.44-.407h2.744c.373 0 .508.203.508.643v3.473c0 .372.17.508.271.508.22 0 .407-.136.813-.542 1.253-1.406 2.151-3.574 2.151-3.574.119-.254.322-.491.763-.491h1.744c.525 0 .644.27.525.643-.22 1.017-2.354 4.031-2.354 4.031-.186.305-.254.44 0 .78.186.254.796.779 1.203 1.253.745.847 1.32 1.558 1.473 2.05.17.474-.085.712-.576.712z"/>
+    </svg>
+  )
+}
+
+function MaxIcon({ size = 20 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/>
+    </svg>
+  )
+}
+
+const CONTACT_ICONS = { telegram: TelegramIcon, vk: VKIcon, max: MaxIcon }
+
+function SizeChip({ size, status, selected, onClick }) {
+  const isStock = status === 'in_stock'
+  return (
+    <button
+      onClick={onClick}
+      className={cn(
+        'rounded-lg border px-3 py-1.5 text-sm font-medium transition-all',
+        selected
+          ? 'border-gold-400 bg-gold-50 text-gold-700 dark:border-gold-500 dark:bg-gold-950/30 dark:text-gold-400'
+          : isStock
+            ? 'border-emerald-200 bg-emerald-50/50 text-emerald-700 hover:border-emerald-300 dark:border-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-400'
+            : 'border-amber-200 bg-amber-50/50 text-amber-700 hover:border-amber-300 dark:border-amber-800 dark:bg-amber-900/20 dark:text-amber-400'
+      )}
+      title={isStock ? 'В наличии' : 'Под заказ'}
+    >
+      {size ?? 'Без размера'}
+    </button>
+  )
+}
+
+export function ProductModal({ product, onClose }) {
+  const overlayRef = useRef(null)
+  const [selectedSize, setSelectedSize] = useState(null)
+  const [copied, setCopied] = useState(false)
+
+  // Автовыбор первого размера
+  useEffect(() => {
+    if (!product) return
+    const first = product.sizes_in_stock?.[0]?.size ?? product.sizes_on_order?.[0]?.size ?? null
+    setSelectedSize(first)
+  }, [product])
+
+  // Закрытие по Escape
+  useEffect(() => {
+    const handler = e => { if (e.key === 'Escape') onClose() }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [onClose])
+
+  if (!product) return null
+
+  const { price, original, discount } = calcPrice(product, selectedSize)
+  const weight = formatWeight(product)
+
+  // Наличие размеров
+  const inStockSizes = (product.sizes_in_stock || []).map(s => s.size)
+  const orderSizes   = (product.sizes_on_order  || []).map(s => s.size)
+  const hasSizeList  = (inStockSizes.length + orderSizes.length) > 0
+
+  // Размеры с учётом: одинаковые в наличии → приоритет «в наличии»
+  const allSizes = [
+    ...inStockSizes.map(s => ({ size: s, status: 'in_stock' })),
+    ...orderSizes.filter(s => !inStockSizes.includes(s)).map(s => ({ size: s, status: 'order' })),
+  ].sort((a, b) => {
+    const na = parseFloat(a.size), nb = parseFloat(b.size)
+    return isNaN(na) || isNaN(nb) ? 0 : na - nb
+  })
+
+  const isOnOrder = product.status === 'order' ||
+    (product.status === 'merged' && selectedSize && orderSizes.includes(selectedSize) && !inStockSizes.includes(selectedSize))
+
+  const message = MESSAGE_TEMPLATE(product.article)
+
+  function handleCopy() {
+    navigator.clipboard.writeText(message).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    })
+  }
+
+  function buildMessengerUrl(type, url) {
+    if (type === 'telegram') {
+      return `${url}?text=${encodeURIComponent(message)}`
+    }
+    return url
+  }
+
+  return (
+    <div
+      ref={overlayRef}
+      className="fixed inset-0 z-50 flex items-end justify-center sm:items-center p-0 sm:p-4 animate-fade-in"
+      onClick={e => { if (e.target === overlayRef.current) onClose() }}
+    >
+      {/* Оверлей */}
+      <div className="absolute inset-0 bg-black/50" />
+
+      {/* Контент */}
+      <div className="relative z-10 flex w-full max-w-2xl flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:rounded-3xl dark:bg-stone-900 max-h-[92dvh] animate-slide-up">
+        {/* Шапка */}
+        <div className="flex items-center justify-between px-5 pt-5 pb-3">
+          <div>
+            <div className="flex items-center gap-2">
+              {(product.status === 'in_stock' || product.status === 'merged') && !isOnOrder
+                ? <span className="badge-in-stock">● В наличии</span>
+                : <span className="badge-on-order">○ Под заказ</span>
+              }
+              {discount && <span className="badge-discount">−{discount}%</span>}
+            </div>
+            <p className="mt-1 text-xs text-stone-400 dark:text-stone-500">арт. {product.article}</p>
+          </div>
+          <button
+            onClick={onClose}
+            className="flex h-9 w-9 items-center justify-center rounded-full transition-colors hover:bg-stone-100 dark:hover:bg-stone-800"
+          >
+            <X size={18} />
+          </button>
+        </div>
+
+        {/* Скролл-зона */}
+        <div className="overflow-y-auto">
+          <div className="flex flex-col gap-5 px-5 pb-6 sm:flex-row">
+            {/* Фото */}
+            <div className="aspect-square w-full shrink-0 overflow-hidden rounded-2xl bg-stone-100 sm:w-56 dark:bg-stone-800">
+              {product.image ? (
+                <img
+                  src={product.image}
+                  alt={`${product.type} ${product.article}`}
+                  className="h-full w-full object-cover"
+                  onError={e => { e.currentTarget.src = '/images/placeholder.svg' }}
+                />
+              ) : (
+                <div className="flex h-full w-full items-center justify-center text-stone-300 dark:text-stone-600">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="h-16 w-16">
+                    <path d="M12 2l3 6h6l-5 4 2 6-6-4-6 4 2-6L3 8h6z" />
+                  </svg>
+                </div>
+              )}
+            </div>
+
+            {/* Детали */}
+            <div className="flex flex-1 flex-col gap-4">
+              {/* Основные характеристики */}
+              <dl className="grid grid-cols-2 gap-x-4 gap-y-2.5">
+                <InfoRow label="Тип"    value={product.type} />
+                <InfoRow label="Металл" value={product.metal_display} />
+                {weight && <InfoRow label="Вес" value={weight} />}
+                {product.inserts && product.inserts.trim() && (
+                  <InfoRow label="Вставки" value={product.inserts} fullWidth />
+                )}
+              </dl>
+
+              {/* Цена */}
+              <div>
+                {price != null ? (
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-2xl font-bold text-stone-900 dark:text-stone-50">
+                      {formatPrice(price)}
+                    </span>
+                    {original && original !== price && (
+                      <span className="text-sm text-stone-400 line-through dark:text-stone-500">
+                        {formatPrice(original)}
+                      </span>
+                    )}
+                  </div>
+                ) : (
+                  <p className="text-base text-stone-400 dark:text-stone-500">Цена по запросу</p>
+                )}
+              </div>
+
+              {/* Скидочный баннер для заказных товаров */}
+              {(product.status === 'order' || isOnOrder) && discount && (
+                <div className="rounded-xl bg-amber-50 px-3 py-2 text-xs text-amber-700 dark:bg-amber-900/20 dark:text-amber-400">
+                  При заказе автоматически применяется скидка <strong>{discount}%</strong>
+                </div>
+              )}
+
+              {/* Размеры */}
+              {hasSizeList && (
+                <div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-stone-400 dark:text-stone-500">
+                    Размеры
+                    {product.status === 'merged' && (
+                      <span className="ml-2 normal-case font-normal text-stone-400">
+                        (зелёный — в наличии, жёлтый — под заказ)
+                      </span>
+                    )}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {allSizes.map(({ size, status }) => (
+                      <SizeChip
+                        key={`${size}_${status}`}
+                        size={size}
+                        status={status}
+                        selected={selectedSize === size}
+                        onClick={() => setSelectedSize(size)}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Блок связи */}
+          <div className="border-t border-stone-100 px-5 pb-6 pt-4 dark:border-stone-800">
+            <p className="mb-3 text-sm font-medium text-stone-700 dark:text-stone-300">
+              Связаться с магазином
+            </p>
+
+            {/* Сообщение для копирования */}
+            <div className="mb-3 flex items-start gap-2 rounded-xl bg-stone-50 p-3 text-sm text-stone-600 dark:bg-stone-800 dark:text-stone-300">
+              <span className="flex-1 select-all">{message}</span>
+              <button
+                onClick={handleCopy}
+                title="Скопировать"
+                className="shrink-0 rounded-lg p-1 transition-colors hover:bg-stone-200 dark:hover:bg-stone-700"
+              >
+                {copied
+                  ? <span className="text-xs text-emerald-600 dark:text-emerald-400">✓</span>
+                  : <Send size={14} className="text-stone-400" />
+                }
+              </button>
+            </div>
+
+            {/* Кнопки мессенджеров */}
+            <div className="flex gap-2">
+              {Object.entries(CONTACTS).map(([key, contact]) => {
+                const Icon = CONTACT_ICONS[key] ?? Send
+                return (
+                  <a
+                    key={key}
+                    href={buildMessengerUrl(key, contact.url)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-stone-200 py-2.5 text-sm font-medium text-stone-600 transition-all hover:border-stone-300 hover:bg-stone-50 dark:border-stone-700 dark:text-stone-300 dark:hover:bg-stone-800"
+                  >
+                    <Icon size={18} />
+                    <span className="hidden sm:inline">{contact.label}</span>
+                  </a>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function InfoRow({ label, value, fullWidth = false }) {
+  return (
+    <div className={cn('flex flex-col gap-0.5', fullWidth && 'col-span-2')}>
+      <dt className="text-xs text-stone-400 dark:text-stone-500">{label}</dt>
+      <dd className="text-sm font-medium text-stone-800 dark:text-stone-200">{value}</dd>
+    </div>
+  )
+}
