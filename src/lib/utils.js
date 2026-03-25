@@ -6,40 +6,103 @@ export function cn(...inputs) {
   return twMerge(clsx(inputs))
 }
 
+// ── Внутренний хелпер: цена с наценкой + скидкой ─────────────────────────────
+function applyOrderPricing(supplierPrice, metalGroup) {
+  const multiplier = PRICE_MULTIPLIERS[metalGroup] ?? 1
+  const disc       = ORDER_DISCOUNTS[metalGroup]   ?? 0
+  const original   = Math.round(supplierPrice * multiplier)
+  const final      = Math.round(original * (1 - disc))
+  return {
+    price:    final,
+    original,
+    discount: disc > 0 ? Math.round(disc * 100) : null,
+  }
+}
+
 /**
- * Рассчитывает цену для отображения.
- * Для in_stock/merged: берёт price из sizes_in_stock[0] (если есть).
- * Для order: price_supplier × multiplier × (1 - discount).
- * Возвращает { price: number|null, original: number|null, discount: number|null }
+ * Средняя цена для карточки товара (без выбранного варианта).
+ * Для in_stock/merged: среднее из sizes_in_stock (если есть).
+ * Для order: среднее из sizes_on_order × наценка × (1 − скидка).
+ * Возвращает { price: number|null, discount: number|null }
  */
-export function calcPrice(product, selectedSize = null) {
+export function calcCardPrice(product) {
   const metal = product.metal_group
 
   if (product.status === 'order') {
+    const entries = (product.sizes_on_order || []).filter(e => e.price != null)
+    if (!entries.length) return { price: null, discount: null }
+    const disc       = ORDER_DISCOUNTS[metal]   ?? 0
     const multiplier = PRICE_MULTIPLIERS[metal] ?? 1
-    const discount   = ORDER_DISCOUNTS[metal]   ?? 0
-
-    // Берём цену из sizes_on_order (по выбранному размеру или первому)
-    const sizeEntries = product.sizes_on_order || []
-    let entry = sizeEntries[0]
-    if (selectedSize) {
-      entry = sizeEntries.find(s => s.size === selectedSize) || sizeEntries[0]
-    }
-    if (!entry || entry.price == null) return { price: null, original: null, discount: null }
-
-    const original = Math.round(entry.price * multiplier)
-    const final    = Math.round(original * (1 - discount))
-    return { price: final, original, discount: discount > 0 ? Math.round(discount * 100) : null }
+    const avg   = entries.reduce((s, e) => s + e.price, 0) / entries.length
+    const final = Math.round(avg * multiplier * (1 - disc))
+    return { price: final, discount: disc > 0 ? Math.round(disc * 100) : null }
   }
 
-  // in_stock / merged — цена из sizes_in_stock
-  const sizeEntries = product.sizes_in_stock || []
-  let entry = sizeEntries[0]
-  if (selectedSize) {
-    entry = sizeEntries.find(s => s.size === selectedSize) || sizeEntries[0]
+  // in_stock / merged — из sizes_in_stock
+  const stockEntries = (product.sizes_in_stock || []).filter(e => e.price != null)
+  if (stockEntries.length) {
+    const avg = Math.round(
+      stockEntries.reduce((s, e) => s + e.price, 0) / stockEntries.length
+    )
+    return { price: avg, discount: null }
   }
+
+  // merged без цен в наличии — откат к sizes_on_order
+  const orderEntries = (product.sizes_on_order || []).filter(e => e.price != null)
+  if (!orderEntries.length) return { price: null, discount: null }
+  const disc       = ORDER_DISCOUNTS[metal]   ?? 0
+  const multiplier = PRICE_MULTIPLIERS[metal] ?? 1
+  const avg   = orderEntries.reduce((s, e) => s + e.price, 0) / orderEntries.length
+  const final = Math.round(avg * multiplier * (1 - disc))
+  return { price: final, discount: disc > 0 ? Math.round(disc * 100) : null }
+}
+
+/**
+ * Цена конкретного варианта в модальном окне.
+ * variant = { source: 'in_stock' | 'order', index: number }
+ * Возвращает { price: number|null, original: number|null, discount: number|null }
+ */
+export function calcVariantPrice(product, variant) {
+  if (!variant) return { price: null, original: null, discount: null }
+
+  const metal   = product.metal_group
+  const entries = variant.source === 'in_stock'
+    ? product.sizes_in_stock || []
+    : product.sizes_on_order || []
+  const entry = entries[variant.index]
+
   if (!entry || entry.price == null) return { price: null, original: null, discount: null }
+
+  if (variant.source === 'order') {
+    return applyOrderPricing(entry.price, metal)
+  }
   return { price: entry.price, original: null, discount: null }
+}
+
+/**
+ * Вес варианта. Для in_stock берёт из entry.weight,
+ * для order / без выбора — из product.weight или product.avg_weight.
+ */
+export function getVariantWeight(product, variant) {
+  if (variant) {
+    const entries = variant.source === 'in_stock'
+      ? product.sizes_in_stock || []
+      : product.sizes_on_order || []
+    const w = entries[variant.index]?.weight
+    if (w != null) return w
+  }
+  return product.weight ?? product.avg_weight ?? null
+}
+
+/** Форматирует граммы: "4.20 г" */
+export function formatWeight(weightValue) {
+  if (weightValue == null) return null
+  // принимает число (грамм)
+  const n = typeof weightValue === 'object'
+    ? (weightValue?.weight ?? weightValue?.avg_weight ?? null) // backward compat
+    : weightValue
+  if (n == null) return null
+  return `${n} г`
 }
 
 /** Форматирует число как цену в рублях: 12 345 ₽ */
@@ -49,13 +112,6 @@ export function formatPrice(n) {
     style: 'currency', currency: 'RUB',
     minimumFractionDigits: 0, maximumFractionDigits: 0,
   }).format(n)
-}
-
-/** Вес для отображения */
-export function formatWeight(product) {
-  const w = product.weight ?? product.avg_weight
-  if (!w) return null
-  return `${w} г`
 }
 
 /** Все доступные типы из каталога (без дублей, отсортированы) */
@@ -79,11 +135,10 @@ export function extractSizes(products) {
   return [...set].sort((a, b) => parseFloat(a) - parseFloat(b))
 }
 
-/** Проверяет, есть ли у товара заданный размер в наличии */
+/** Проверяет, есть ли у товара заданный размер */
 export function hasSize(product, size) {
-  const allSizes = [
+  return [
     ...(product.sizes_in_stock || []),
     ...(product.sizes_on_order || []),
-  ]
-  return allSizes.some(s => s.size === size)
+  ].some(s => s.size === size)
 }

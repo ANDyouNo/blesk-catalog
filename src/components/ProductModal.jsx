@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, useMemo } from 'react'
 import { X, Send } from 'lucide-react'
-import { calcPrice, formatPrice, formatWeight, cn } from '@/lib/utils'
+import { calcVariantPrice, getVariantWeight, formatPrice, formatWeight, cn } from '@/lib/utils'
 import { CONTACTS, MESSAGE_TEMPLATE } from '@/config/pricing'
 
-// Иконки мессенджеров (SVG inline)
+// ── Иконки мессенджеров ────────────────────────────────────────────────────────
 function TelegramIcon({ size = 20 }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -30,37 +30,81 @@ function MaxIcon({ size = 20 }) {
 
 const CONTACT_ICONS = { telegram: TelegramIcon, vk: VKIcon, max: MaxIcon }
 
-function SizeChip({ size, status, selected, onClick }) {
-  const isStock = status === 'in_stock'
+// ── Чип варианта ──────────────────────────────────────────────────────────────
+function VariantChip({ label, source, selected, onClick }) {
   return (
     <button
       onClick={onClick}
       className={cn(
         'rounded-lg border px-3 py-1.5 text-sm font-medium transition-all',
         selected
-          ? 'border-gold-400 bg-gold-50 text-gold-700 dark:border-gold-500 dark:bg-gold-950/30 dark:text-gold-400'
-          : isStock
+          // синий = выбран
+          ? 'border-blue-400 bg-blue-50 text-blue-700 dark:border-blue-500 dark:bg-blue-950/30 dark:text-blue-400'
+          : source === 'in_stock'
+            // зелёный = в наличии
             ? 'border-emerald-200 bg-emerald-50/50 text-emerald-700 hover:border-emerald-300 dark:border-emerald-800 dark:bg-emerald-900/20 dark:text-emerald-400'
+            // оранжевый = под заказ
             : 'border-amber-200 bg-amber-50/50 text-amber-700 hover:border-amber-300 dark:border-amber-800 dark:bg-amber-900/20 dark:text-amber-400'
       )}
-      title={isStock ? 'В наличии' : 'Под заказ'}
+      title={source === 'in_stock' ? 'В наличии' : 'Под заказ'}
     >
-      {size ?? 'Без размера'}
+      {label}
     </button>
   )
 }
 
+// ── Основной компонент ─────────────────────────────────────────────────────────
 export function ProductModal({ product, onClose }) {
   const overlayRef = useRef(null)
-  const [selectedSize, setSelectedSize] = useState(null)
-  const [copied, setCopied] = useState(false)
+  const [selectedVariantKey, setSelectedVariantKey] = useState(null) // "source:index"
+  const [copied, setCopied]                         = useState(false)
 
-  // Автовыбор первого размера
-  useEffect(() => {
-    if (!product) return
-    const first = product.sizes_in_stock?.[0]?.size ?? product.sizes_on_order?.[0]?.size ?? null
-    setSelectedSize(first)
+  // ── Строим плоский список вариантов ──────────────────────────────────────────
+  const variants = useMemo(() => {
+    if (!product) return []
+
+    const stockItems = (product.sizes_in_stock || []).map((entry, i) => ({
+      key:    `in_stock:${i}`,
+      source: 'in_stock',
+      index:  i,
+      size:   entry.size,
+      price:  entry.price,
+      weight: entry.weight,
+    }))
+
+    const orderItems = (product.sizes_on_order || []).map((entry, i) => ({
+      key:    `order:${i}`,
+      source: 'order',
+      index:  i,
+      size:   entry.size,
+      price:  entry.price,
+      weight: entry.weight,
+    }))
+
+    // Сортируем: in_stock вперёд, потом по размеру
+    const all = [...stockItems, ...orderItems].sort((a, b) => {
+      if (a.source !== b.source) return a.source === 'in_stock' ? -1 : 1
+      const na = parseFloat(a.size), nb = parseFloat(b.size)
+      if (!isNaN(na) && !isNaN(nb)) return na - nb
+      return 0
+    })
+
+    // Нумеруем варианты без размера (size === null)
+    let noSizeN = 0
+    return all.map(v => ({
+      ...v,
+      label: v.size != null ? v.size : `Вариант ${++noSizeN}`,
+    }))
   }, [product])
+
+  // Автовыбор первого варианта при открытии товара
+  useEffect(() => {
+    if (variants.length > 0) {
+      setSelectedVariantKey(variants[0].key)
+    } else {
+      setSelectedVariantKey(null)
+    }
+  }, [variants])
 
   // Закрытие по Escape
   useEffect(() => {
@@ -71,25 +115,23 @@ export function ProductModal({ product, onClose }) {
 
   if (!product) return null
 
-  const { price, original, discount } = calcPrice(product, selectedSize)
-  const weight = formatWeight(product)
+  // Выбранный вариант
+  const selectedVariant = variants.find(v => v.key === selectedVariantKey) ?? null
 
-  // Наличие размеров
-  const inStockSizes = (product.sizes_in_stock || []).map(s => s.size)
-  const orderSizes   = (product.sizes_on_order  || []).map(s => s.size)
-  const hasSizeList  = (inStockSizes.length + orderSizes.length) > 0
+  // Цена и вес выбранного варианта
+  const variantArg  = selectedVariant
+    ? { source: selectedVariant.source, index: selectedVariant.index }
+    : null
+  const { price, original, discount } = calcVariantPrice(product, variantArg)
+  const weightVal = getVariantWeight(product, variantArg)
+  const weight    = formatWeight(weightVal)
 
-  // Размеры с учётом: одинаковые в наличии → приоритет «в наличии»
-  const allSizes = [
-    ...inStockSizes.map(s => ({ size: s, status: 'in_stock' })),
-    ...orderSizes.filter(s => !inStockSizes.includes(s)).map(s => ({ size: s, status: 'order' })),
-  ].sort((a, b) => {
-    const na = parseFloat(a.size), nb = parseFloat(b.size)
-    return isNaN(na) || isNaN(nb) ? 0 : na - nb
-  })
+  // Показываем «Под заказ» если варианта нет или выбранный — order
+  const isOnOrder = !selectedVariant || selectedVariant.source === 'order'
 
-  const isOnOrder = product.status === 'order' ||
-    (product.status === 'merged' && selectedSize && orderSizes.includes(selectedSize) && !inStockSizes.includes(selectedSize))
+  const hasVariants = variants.length > 0
+  const hasMixed    = variants.some(v => v.source === 'in_stock') &&
+                      variants.some(v => v.source === 'order')
 
   const message = MESSAGE_TEMPLATE(product.article)
 
@@ -101,9 +143,7 @@ export function ProductModal({ product, onClose }) {
   }
 
   function buildMessengerUrl(type, url) {
-    if (type === 'telegram') {
-      return `${url}?text=${encodeURIComponent(message)}`
-    }
+    if (type === 'telegram') return `${url}?text=${encodeURIComponent(message)}`
     return url
   }
 
@@ -118,11 +158,12 @@ export function ProductModal({ product, onClose }) {
 
       {/* Контент */}
       <div className="relative z-10 flex w-full max-w-2xl flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:rounded-3xl dark:bg-stone-900 max-h-[92dvh] animate-slide-up">
+
         {/* Шапка */}
         <div className="flex items-center justify-between px-5 pt-5 pb-3">
           <div>
             <div className="flex items-center gap-2">
-              {(product.status === 'in_stock' || product.status === 'merged') && !isOnOrder
+              {!isOnOrder
                 ? <span className="badge-in-stock">● В наличии</span>
                 : <span className="badge-on-order">○ Под заказ</span>
               }
@@ -141,6 +182,7 @@ export function ProductModal({ product, onClose }) {
         {/* Скролл-зона */}
         <div className="overflow-y-auto">
           <div className="flex flex-col gap-5 px-5 pb-6 sm:flex-row">
+
             {/* Фото */}
             <div className="aspect-square w-full shrink-0 overflow-hidden rounded-2xl bg-stone-100 sm:w-56 dark:bg-stone-800">
               {product.image ? (
@@ -161,6 +203,7 @@ export function ProductModal({ product, onClose }) {
 
             {/* Детали */}
             <div className="flex flex-1 flex-col gap-4">
+
               {/* Основные характеристики */}
               <dl className="grid grid-cols-2 gap-x-4 gap-y-2.5">
                 <InfoRow label="Тип"    value={product.type} />
@@ -189,32 +232,32 @@ export function ProductModal({ product, onClose }) {
                 )}
               </div>
 
-              {/* Скидочный баннер для заказных товаров */}
-              {(product.status === 'order' || isOnOrder) && discount && (
+              {/* Скидочный баннер */}
+              {isOnOrder && discount && (
                 <div className="rounded-xl bg-amber-50 px-3 py-2 text-xs text-amber-700 dark:bg-amber-900/20 dark:text-amber-400">
                   При заказе автоматически применяется скидка <strong>{discount}%</strong>
                 </div>
               )}
 
-              {/* Размеры */}
-              {hasSizeList && (
+              {/* Варианты (чипы) */}
+              {hasVariants && (
                 <div>
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-stone-400 dark:text-stone-500">
-                    Размеры
-                    {product.status === 'merged' && (
+                    {variants[0].size != null ? 'Размеры' : 'Варианты'}
+                    {hasMixed && (
                       <span className="ml-2 normal-case font-normal text-stone-400">
                         (зелёный — в наличии, жёлтый — под заказ)
                       </span>
                     )}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {allSizes.map(({ size, status }) => (
-                      <SizeChip
-                        key={`${size}_${status}`}
-                        size={size}
-                        status={status}
-                        selected={selectedSize === size}
-                        onClick={() => setSelectedSize(size)}
+                    {variants.map(v => (
+                      <VariantChip
+                        key={v.key}
+                        label={v.label}
+                        source={v.source}
+                        selected={v.key === selectedVariantKey}
+                        onClick={() => setSelectedVariantKey(v.key)}
                       />
                     ))}
                   </div>

@@ -1,7 +1,7 @@
 import { memo } from 'react'
-import { calcPrice, formatPrice, formatWeight } from '@/lib/utils'
+import { calcCardPrice, formatPrice } from '@/lib/utils'
 
-// Компонент статуса вынесен отдельно — не пересоздаётся при ре-рендере родителя
+// Статус-бейдж — отдельный компонент, не пересоздаётся при ре-рендере
 const StatusBadge = memo(function StatusBadge({ status }) {
   if (status === 'in_stock' || status === 'merged') {
     return <span className="badge-in-stock">● В наличии</span>
@@ -10,16 +10,7 @@ const StatusBadge = memo(function StatusBadge({ status }) {
 })
 
 export const ProductCard = memo(function ProductCard({ product, onClick }) {
-  const { price, discount } = calcPrice(product)
-  const weight = formatWeight(product)
-
-  const inStockSizes = product.sizes_in_stock
-  const hasNamedSizes = inStockSizes.length > 0 && inStockSizes[0].size !== null
-
-  // Показываем не более 3 размеров + «...» если больше
-  const sizesPreview = hasNamedSizes
-    ? inStockSizes.slice(0, 3).map(s => s.size).join(', ') + (inStockSizes.length > 3 ? ' …' : '')
-    : null
+  const { price, discount } = calcCardPrice(product)
 
   return (
     <button
@@ -67,14 +58,6 @@ export const ProductCard = memo(function ProductCard({ product, onClick }) {
 
         <p className="text-xs text-stone-500 dark:text-stone-400">{product.metal_display}</p>
 
-        {weight && (
-          <p className="text-xs text-stone-400 dark:text-stone-500">{weight}</p>
-        )}
-
-        {sizesPreview && (
-          <p className="text-xs text-stone-400 dark:text-stone-500">р. {sizesPreview}</p>
-        )}
-
         <div className="mt-auto pt-2">
           {price != null ? (
             <p className="text-sm font-semibold text-stone-900 dark:text-stone-50">
@@ -89,7 +72,6 @@ export const ProductCard = memo(function ProductCard({ product, onClick }) {
   )
 })
 
-// Отдельный компонент-заглушка — не инлайним JSX в условии
 const PlaceholderIcon = memo(function PlaceholderIcon() {
   return (
     <div className="flex h-full w-full items-center justify-center text-stone-300 dark:text-stone-600">
