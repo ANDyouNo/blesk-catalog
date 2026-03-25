@@ -8,8 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "export": "python3 scripts/export_catalog.py",
-    "compress": "python3 scripts/compress_images.py",
-    "prepare": "python3 scripts/export_catalog.py"
+    "compress": "python3 scripts/compress_images.py"
   },
   "dependencies": {
     "react": "^18.3.1",
