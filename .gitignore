@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .netlify/
+package-lock.json
 .DS_Store
 *.log
 .env
