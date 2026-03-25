@@ -19,16 +19,43 @@ AQUA_DB     = os.path.join(PARENT_DIR, "aquamarine_scrap", "aquamarine.db")
 OUTPUT_JSON = os.path.join(BASE_DIR, "public", "catalog.json")
 PUBLIC_DIR  = os.path.join(BASE_DIR, "public")
 
-# ── Нормализация металла ───────────────────────────────────────────────────────
+# ── Металл из суффикса артикула (.1/.2/.3/.5/.6) ──────────────────────────────
+# Суффикс в конце артикула jewelry.db кодирует точный вариант металла.
+# Разные суффиксы = разные товары с разными картинками и характеристиками.
+SUFFIX_METAL = {
+    ".1": ("Золото 585",  "Золото 585 красное"),
+    ".2": ("Золото 585",  "Золото 585 белое"),
+    ".3": ("Золото 585",  "Золото 585 жёлтое"),
+    ".5": ("Серебро 925", "Серебро 925 родирование"),
+    ".6": ("Серебро 925", "Серебро 925 золочение"),
+}
+
+# Для артикулов без суффикса и для aquamarine.db
 METAL_MAP = {
     "Au 585":                  ("Золото 585",  "Золото 585"),
     "Ag 925":                  ("Серебро 925", "Серебро 925"),
-    "Золото 585 красное":      ("Золото 585",  "Золото 585 (красное)"),
-    "Золото 585 белое":        ("Золото 585",  "Золото 585 (белое)"),
-    "Серебро 925 родирование": ("Серебро 925", "Серебро 925 (родирование)"),
+    "Золото 585 красное":      ("Золото 585",  "Золото 585 красное"),
+    "Золото 585 белое":        ("Золото 585",  "Золото 585 белое"),
+    "Золото 585 жёлтое":       ("Золото 585",  "Золото 585 жёлтое"),
+    "Серебро 925 родирование": ("Серебро 925", "Серебро 925 родирование"),
+    "Серебро 925 золочение":   ("Серебро 925", "Серебро 925 золочение"),
 }
 
+def metal_from_jewelry(article, metal_field):
+    """
+    Определяет (metal_group, metal_display) для товара из jewelry.db.
+    Суффикс артикула имеет приоритет над полем metal.
+    """
+    m = re.search(r"(\.\d)$", (article or "").strip())
+    if m:
+        suffix = m.group(1)
+        if suffix in SUFFIX_METAL:
+            return SUFFIX_METAL[suffix]
+    raw = (metal_field or "").strip()
+    return METAL_MAP.get(raw, (raw, raw))
+
 def normalize_metal(raw):
+    """Нормализует металл для aquamarine.db (нет суффиксов)."""
     raw = (raw or "").strip()
     return METAL_MAP.get(raw, (raw, raw))
 
@@ -59,16 +86,16 @@ def parse_sizes(sizes_str):
 # ── Артикул: базовая часть (без суффикса металла) ─────────────────────────────
 def base_article(article):
     """
-    Убирает суффикс вида '.<цифра>' в конце артикула.
+    Убирает суффикс вида '.<цифра>' в конце артикула — для отображения клиенту
+    и для ключа слияния с aquamarine.db.
     10001.5 → 10001,  74137А.5 → 74137А,  019583 → 019583
     """
-    return re.sub(r'\.\d$', '', (article or "").strip())
+    return re.sub(r"\.\d$", "", (article or "").strip())
 
 # ── Путь к картинке ────────────────────────────────────────────────────────────
 def image_path_jewelry(image_path, image_url):
     """
-    Приоритет: локальный WebP (если сжат) → внешний URL (image_url) → локальный
-    путь без проверки (ещё не сжат, но будет при следующем запуске compress).
+    Приоритет: локальный WebP (если сжат) → внешний URL → путь-заглушка.
     """
     if image_path and image_path.strip():
         fname = os.path.basename(image_path.strip())
@@ -76,11 +103,9 @@ def image_path_jewelry(image_path, image_url):
         local_rel  = f"images/jewelry/{name}.webp"
         local_full = os.path.join(PUBLIC_DIR, local_rel)
         if os.path.exists(local_full):
-            return local_rel          # локальный WebP существует — берём его
-    # Локального WebP нет → внешний URL, чтобы картинка хоть как-то отображалась
+            return local_rel
     if image_url and image_url.strip():
         return image_url.strip()
-    # Нет ни WebP ни URL → путь-заглушка (сожмётся при следующем compress_images)
     if image_path and image_path.strip():
         fname = os.path.basename(image_path.strip())
         name, _ = os.path.splitext(fname)
@@ -97,9 +122,10 @@ def image_path_aqua(image_path):
 # ── Читаем jewelry.db ──────────────────────────────────────────────────────────
 def load_jewelry(conn):
     """
-    Группируем по (base_article, metal_group, display_type).
-    Все физические экземпляры сохраняются — без дедупликации!
-    Каждый экземпляр хранит собственный size, price, weight.
+    Ключ группы: (raw_article, display_type).
+    raw_article содержит суффикс металла (.1/.5/.6 и т.д.) — каждый суффикс
+    означает отдельный товар с отдельной картинкой и характеристиками.
+    Один и тот же raw_article в разных РАЗМЕРАХ → один товар, несколько чипов.
     """
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
@@ -112,14 +138,14 @@ def load_jewelry(conn):
     """)
     rows = cur.fetchall()
 
-    groups = {}  # key = (base_art, metal_group, display_type)
+    groups = {}  # key = (raw_article, display_type)
     for row in rows:
-        article      = (row["article"] or "").strip()
-        base_art     = base_article(article)
+        raw_art      = (row["article"] or "").strip()
+        base_art     = base_article(raw_art)
         display_type = normalize_type(row["type"], row["subtype"])
-        metal_group, metal_display = normalize_metal(row["metal"])
+        metal_group, metal_display = metal_from_jewelry(raw_art, row["metal"])
 
-        key = (base_art, metal_group, display_type)
+        key = (raw_art, display_type)
 
         size   = normalize_size(row["size"])
         weight = row["weight"]
@@ -128,8 +154,9 @@ def load_jewelry(conn):
 
         if key not in groups:
             groups[key] = {
-                "id":             f"j_{base_art}_{metal_group}_{display_type}",
-                # Отображаем базовый артикул (без суффикса металла)
+                # base_art — для отображения клиенту (без суффикса)
+                # raw_art используется только как ключ группировки
+                "id":             f"j_{raw_art}_{display_type}",
                 "article":        base_art,
                 "source":         "jewelry",
                 "status":         "in_stock",
@@ -140,6 +167,8 @@ def load_jewelry(conn):
                 "image":          img,
                 "sizes_in_stock": [],
                 "sizes_on_order": [],
+                # Служебные поля для слияния (не попадают в JSON)
+                "_base_art":      base_art,
             }
 
         g = groups[key]
@@ -179,7 +208,6 @@ def load_aquamarine(conn):
         img   = image_path_aqua(row["image_path"])
         sup_price = float(row["price"]) if row["price"] else None
 
-        # Если размеров нет — одна запись без размера
         order_entries = (
             [{"size": s, "price": sup_price, "weight": None} for s in sizes]
             if sizes else
@@ -206,33 +234,40 @@ def load_aquamarine(conn):
 # ── Объединение ────────────────────────────────────────────────────────────────
 def merge_products(jewelry_groups, aqua_list):
     """
-    Ключ совпадения: (base_article, metal_group, type).
-    Если совпало — объединяем sizes_in_stock из jewelry + sizes_on_order из aqua.
-    Размеры которые есть в наличии убираем из очереди под заказ.
+    Ключ совпадения: (base_article, metal_display, type).
+    base_article — артикул без суффикса металла.
+    metal_display — точный вариант металла ("Золото 585 красное", "Серебро 925 родирование" …).
+
+    Это позволяет сопоставить:
+      jewelry  AB123.1 (Au 585)          →  metal_display = "Золото 585 красное"
+      aquamarine AB123  metal="Золото 585 красное"  →  metal_display = "Золото 585 красное"
     """
-    aqua_by_key   = {}
+    # aqua_by_key: (article, metal_display, type) → [продукты]
+    aqua_by_key = {}
     for p in aqua_list:
-        key = (p["article"], p["metal_group"], p["type"])
+        key = (p["article"], p["metal_display"], p["type"])
         aqua_by_key.setdefault(key, []).append(p)
 
-    result        = []
-    used_aqua     = set()
+    result    = []
+    used_aqua = set()
 
-    for key, j_prod in jewelry_groups.items():
-        base_art, metal_group, ptype = key
+    for j_key, j_prod in jewelry_groups.items():
+        base_art     = j_prod["_base_art"]
+        metal_display = j_prod["metal_display"]
+        ptype        = j_prod["type"]
 
-        if key in aqua_by_key:
-            used_aqua.add(key)
-            a_prods = aqua_by_key[key]
+        merge_key = (base_art, metal_display, ptype)
 
-            merged = dict(j_prod)
+        if merge_key in aqua_by_key:
+            used_aqua.add(merge_key)
+            a_prods = aqua_by_key[merge_key]
+
+            merged = {k: v for k, v in j_prod.items() if not k.startswith("_")}
             merged["source"] = "merged"
             merged["status"] = "merged"
 
             # Размеры в наличии (из jewelry)
-            in_stock_sizes = {
-                e["size"] for e in merged["sizes_in_stock"] if e["size"]
-            }
+            in_stock_sizes = {e["size"] for e in merged["sizes_in_stock"] if e["size"]}
 
             # Размеры под заказ — только те которых нет в наличии
             order_entries = []
@@ -244,7 +279,8 @@ def merge_products(jewelry_groups, aqua_list):
 
             result.append(merged)
         else:
-            result.append(j_prod)
+            # Убираем служебные поля перед добавлением в результат
+            result.append({k: v for k, v in j_prod.items() if not k.startswith("_")})
 
     # Оставшиеся aquamarine (не смержились)
     for key, a_prods in aqua_by_key.items():
@@ -291,6 +327,13 @@ def main():
     on_order = sum(1 for p in products if p["status"] == "order")
     merged   = sum(1 for p in products if p["status"] == "merged")
     print(f"  В наличии: {in_stock}  |  Под заказ: {on_order}  |  Совмещённые: {merged}")
+
+    # Статистика по металлам
+    from collections import Counter
+    metal_cnt = Counter(p["metal_display"] for p in products if p["status"] in ("in_stock", "merged"))
+    print("\n  Металлы (в наличии):")
+    for md, cnt in sorted(metal_cnt.items()):
+        print(f"    {cnt:4d}  {md}")
 
     catalog = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
