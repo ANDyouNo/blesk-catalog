@@ -17,6 +17,7 @@ PARENT_DIR = os.path.dirname(BASE_DIR)
 JEWELRY_DB  = os.path.join(PARENT_DIR, "jewelry-store", "backend", "jewelry.db")
 AQUA_DB     = os.path.join(PARENT_DIR, "aquamarine_scrap", "aquamarine.db")
 OUTPUT_JSON = os.path.join(BASE_DIR, "public", "catalog.json")
+PUBLIC_DIR  = os.path.join(BASE_DIR, "public")
 
 # ── Нормализация металла ───────────────────────────────────────────────────────
 METAL_MAP = {
@@ -65,8 +66,21 @@ def base_article(article):
 
 # ── Путь к картинке ────────────────────────────────────────────────────────────
 def image_path_jewelry(image_path, image_url):
+    """
+    Приоритет: локальный WebP (если сжат) → внешний URL (image_url) → локальный
+    путь без проверки (ещё не сжат, но будет при следующем запуске compress).
+    """
+    if image_path and image_path.strip():
+        fname = os.path.basename(image_path.strip())
+        name, _ = os.path.splitext(fname)
+        local_rel  = f"images/jewelry/{name}.webp"
+        local_full = os.path.join(PUBLIC_DIR, local_rel)
+        if os.path.exists(local_full):
+            return local_rel          # локальный WebP существует — берём его
+    # Локального WebP нет → внешний URL, чтобы картинка хоть как-то отображалась
     if image_url and image_url.strip():
         return image_url.strip()
+    # Нет ни WebP ни URL → путь-заглушка (сожмётся при следующем compress_images)
     if image_path and image_path.strip():
         fname = os.path.basename(image_path.strip())
         name, _ = os.path.splitext(fname)
@@ -137,10 +151,8 @@ def load_jewelry(conn):
             "weight": weight,
         })
 
-        # Картинка: приоритет у внешнего URL
-        if img and img.startswith("http") and (
-            not g["image"] or not g["image"].startswith("http")
-        ):
+        # Картинка: если у группы ещё нет изображения — берём первую найденную
+        if img and not g["image"]:
             g["image"] = img
 
     return groups
