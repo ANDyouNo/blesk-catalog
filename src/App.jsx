@@ -1,11 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Header }       from '@/components/Header'
 import { FilterPanel }  from '@/components/FilterPanel'
-import { ProductGrid }  from '@/components/ProductGrid'
+import { VirtualGrid }  from '@/components/VirtualGrid'
 import { ProductModal } from '@/components/ProductModal'
 import { extractTypes, extractMetals, extractSizes, hasSize } from '@/lib/utils'
-
-const PAGE_SIZE = 48   // карточек на страницу
 
 const EMPTY_FILTERS = {
   search:         '',
@@ -34,15 +32,13 @@ function countByStatus(products) {
 }
 
 export default function App() {
-  const [allProducts, setAllProducts]   = useState([])
-  const [loading, setLoading]           = useState(true)
-  const [error, setError]               = useState(null)
-  const [filters, setFilters]           = useState(EMPTY_FILTERS)
-  const [page, setPage]                 = useState(1)
-  const [selectedProduct, setSelected]  = useState(null)
+  const [allProducts, setAllProducts]  = useState([])
+  const [loading, setLoading]          = useState(true)
+  const [error, setError]              = useState(null)
+  const [filters, setFilters]          = useState(EMPTY_FILTERS)
+  const [selectedProduct, setSelected] = useState(null)
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
-  const scrollPosRef  = useRef(0)
-  const loadMoreRef   = useRef(null)
+  const scrollPosRef = useRef(0)
 
   // Загрузка данных
   useEffect(() => {
@@ -63,7 +59,7 @@ export default function App() {
     byStatus: countByStatus(allProducts),
   }), [allProducts])
 
-  // Фильтрация (пересчитывается только при смене filters или данных)
+  // Фильтрация
   const filtered = useMemo(() => {
     const { search, statuses, selectedTypes, selectedMetals, selectedSizes } = filters
     const q = search.trim().toLowerCase()
@@ -87,13 +83,6 @@ export default function App() {
     })
   }, [allProducts, filters])
 
-  // Сброс страницы при смене фильтра
-  useEffect(() => { setPage(1) }, [filters])
-
-  // Видимый срез — только текущие страницы
-  const visible = useMemo(() => filtered.slice(0, page * PAGE_SIZE), [filtered, page])
-  const hasMore = visible.length < filtered.length
-
   const activeFiltersCount = useMemo(() => {
     const f = filters
     return (f.search ? 1 : 0) + f.statuses.size + f.selectedTypes.size +
@@ -105,8 +94,6 @@ export default function App() {
   }, [])
 
   const handleReset = useCallback(() => setFilters(EMPTY_FILTERS), [])
-
-  const handleLoadMore = useCallback(() => setPage(p => p + 1), [])
 
   // Открытие модалки — сохраняем позицию скролла
   const handleProductClick = useCallback(product => {
@@ -168,7 +155,6 @@ export default function App() {
           />
 
           <div className="min-w-0 flex-1">
-            {/* Счётчик */}
             <div className="mb-4">
               <p className="text-sm text-stone-400 dark:text-stone-500">
                 {filtered.length === allProducts.length
@@ -177,25 +163,11 @@ export default function App() {
               </p>
             </div>
 
-            <ProductGrid
-              products={visible}
+            {/* Виртуальная сетка — в DOM всегда только видимые строки + буфер */}
+            <VirtualGrid
+              products={filtered}
               onProductClick={handleProductClick}
             />
-
-            {/* Кнопка «Загрузить ещё» */}
-            {hasMore && (
-              <div ref={loadMoreRef} className="mt-10 flex flex-col items-center gap-2">
-                <button
-                  onClick={handleLoadMore}
-                  className="rounded-full border border-stone-200 bg-white px-8 py-3 text-sm font-medium text-stone-600 shadow-sm transition-all hover:border-stone-300 hover:shadow active:scale-95 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-300 dark:hover:border-stone-600"
-                >
-                  Загрузить ещё
-                </button>
-                <p className="text-xs text-stone-400 dark:text-stone-500">
-                  Показано {visible.length} из {filtered.length}
-                </p>
-              </div>
-            )}
           </div>
         </div>
       </main>

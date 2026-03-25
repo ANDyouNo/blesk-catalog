@@ -16,7 +16,8 @@
     "lucide-react": "^0.446.0",
     "next-themes": "^0.3.0",
     "clsx": "^2.1.1",
-    "tailwind-merge": "^2.5.2"
+    "tailwind-merge": "^2.5.2",
+    "@tanstack/react-virtual": "^3.10.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
