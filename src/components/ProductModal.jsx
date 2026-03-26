@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useMemo } from 'react'
-import { X, Send } from 'lucide-react'
+import { X, Send, Check } from 'lucide-react'
 import { calcVariantPrice, getVariantWeight, formatPrice, formatWeight, cn } from '@/lib/utils'
 import { CONTACTS, MESSAGE_TEMPLATE } from '@/config/pricing'
 
@@ -269,7 +269,7 @@ export function ProductModal({ product, onClose }) {
           {/* Блок связи */}
           <div className="border-t border-stone-100 px-5 pb-6 pt-4 dark:border-stone-800">
             <p className="mb-3 text-sm font-medium text-stone-700 dark:text-stone-300">
-              Связаться с магазином
+              Напишите нам! 
             </p>
 
             {/* Сообщение для копирования */}
@@ -278,10 +278,10 @@ export function ProductModal({ product, onClose }) {
               <button
                 onClick={handleCopy}
                 title="Скопировать"
-                className="shrink-0 rounded-lg p-1 transition-colors hover:bg-stone-200 dark:hover:bg-stone-700"
+                className="shrink-0 flex items-center justify-center w-6 h-6 rounded-lg transition-colors hover:bg-stone-200 dark:hover:bg-stone-700"
               >
                 {copied
-                  ? <span className="text-xs text-emerald-600 dark:text-emerald-400">✓</span>
+                  ? <Check size={14} className="text-emerald-500 dark:text-emerald-400" />
                   : <Send size={14} className="text-stone-400" />
                 }
               </button>
