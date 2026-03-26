@@ -107,17 +107,20 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'instant' })
   }, [])
 
-  // Открытие модалки — сохраняем позицию скролла
+  // Открытие модалки — сохраняем позицию и компенсируем ширину скроллбара
   const handleProductClick = useCallback(product => {
     scrollPosRef.current = window.scrollY
-    setSelected(product)
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
     document.body.style.overflow = 'hidden'
+    document.body.style.paddingRight = `${scrollbarWidth}px`
+    setSelected(product)
   }, [])
 
-  // Закрытие — восстанавливаем позицию
+  // Закрытие — убираем компенсацию и восстанавливаем позицию
   const handleModalClose = useCallback(() => {
     setSelected(null)
     document.body.style.overflow = ''
+    document.body.style.paddingRight = ''
     requestAnimationFrame(() => {
       window.scrollTo({ top: scrollPosRef.current, behavior: 'instant' })
     })
