@@ -34,8 +34,10 @@ function countByStatus(products) {
 export default function App() {
   const [allProducts, setAllProducts]  = useState([])
   const [loading, setLoading]          = useState(true)
+  const [loaderExiting, setLoaderExiting] = useState(false)
   const [error, setError]              = useState(null)
   const [filters, setFilters]          = useState(EMPTY_FILTERS)
+  const [filterVersion, setFilterVersion] = useState(0)
   const [selectedProduct, setSelected] = useState(null)
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
   const scrollPosRef = useRef(0)
@@ -44,7 +46,11 @@ export default function App() {
   useEffect(() => {
     fetch('/catalog.json')
       .then(r => { if (!r.ok) throw new Error('Не удалось загрузить каталог'); return r.json() })
-      .then(data => { setAllProducts(data.products || []); setLoading(false) })
+      .then(data => {
+        setAllProducts(data.products || [])
+        setLoaderExiting(true)                      // начинаем fade-out загрузчика
+        setTimeout(() => setLoading(false), 480)    // убираем из DOM после анимации
+      })
       .catch(e => { setError(e.message); setLoading(false) })
   }, [])
 
@@ -91,10 +97,15 @@ export default function App() {
 
   const handleFilterChange = useCallback((key, value) => {
     setFilters(prev => ({ ...prev, [key]: value }))
+    setFilterVersion(v => v + 1)
     window.scrollTo({ top: 0, behavior: 'instant' })
   }, [])
 
-  const handleReset = useCallback(() => setFilters(EMPTY_FILTERS), [])
+  const handleReset = useCallback(() => {
+    setFilters(EMPTY_FILTERS)
+    setFilterVersion(v => v + 1)
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [])
 
   // Открытие модалки — сохраняем позицию скролла
   const handleProductClick = useCallback(product => {
@@ -112,17 +123,6 @@ export default function App() {
     })
   }, [])
 
-  if (loading) {
-    return (
-      <div className="flex min-h-dvh items-center justify-center bg-stone-50 dark:bg-stone-950">
-        <div className="flex flex-col items-center gap-3">
-          <div className="h-8 w-8 animate-spin rounded-full border-2 border-stone-200 border-t-gold-500" />
-          <p className="text-sm text-stone-400">Загружаем каталог…</p>
-        </div>
-      </div>
-    )
-  }
-
   if (error) {
     return (
       <div className="flex min-h-dvh items-center justify-center bg-stone-50 dark:bg-stone-950">
@@ -135,50 +135,72 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-dvh bg-stone-50 dark:bg-stone-950">
-      <Header
-        onOpenFilters={() => setMobileFiltersOpen(true)}
-        activeFiltersCount={activeFiltersCount}
-      />
-
-      <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
-        <div className="flex gap-6">
-          <FilterPanel
-            types={types}
-            metals={metals}
-            sizes={sizes}
-            filters={filters}
-            onFilterChange={handleFilterChange}
-            onReset={handleReset}
-            isOpen={mobileFiltersOpen}
-            onClose={() => setMobileFiltersOpen(false)}
-            counts={counts}
-          />
-
-          <div className="min-w-0 flex-1">
-            <div className="mb-4">
-              <p className="text-sm text-stone-400 dark:text-stone-500">
-                {filtered.length === allProducts.length
-                  ? `${allProducts.length} украшений`
-                  : `${filtered.length} из ${allProducts.length}`}
-              </p>
-            </div>
-
-            {/* Виртуальная сетка — в DOM всегда только видимые строки + буфер */}
-            <VirtualGrid
-              products={filtered}
-              onProductClick={handleProductClick}
-            />
+    <>
+      {/* Экран загрузки — overlay поверх каталога, плавно исчезает */}
+      {loading && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-stone-50 dark:bg-stone-950"
+          style={{
+            transition: 'opacity 480ms ease-out',
+            opacity: loaderExiting ? 0 : 1,
+            pointerEvents: loaderExiting ? 'none' : 'auto',
+          }}
+        >
+          <div className="flex flex-col items-center gap-3">
+            <div className="h-8 w-8 animate-spin rounded-full border-2 border-stone-200 border-t-gold-500" />
+            <p className="text-sm text-stone-400">Загружаем каталог…</p>
           </div>
         </div>
-      </main>
-
-      {selectedProduct && (
-        <ProductModal
-          product={selectedProduct}
-          onClose={handleModalClose}
-        />
       )}
-    </div>
+
+      <div className="min-h-dvh bg-stone-50 dark:bg-stone-950">
+        <Header
+          onOpenFilters={() => setMobileFiltersOpen(true)}
+          activeFiltersCount={activeFiltersCount}
+        />
+
+        <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6">
+          <div className="flex gap-6">
+            <FilterPanel
+              types={types}
+              metals={metals}
+              sizes={sizes}
+              filters={filters}
+              onFilterChange={handleFilterChange}
+              onReset={handleReset}
+              isOpen={mobileFiltersOpen}
+              onClose={() => setMobileFiltersOpen(false)}
+              counts={counts}
+            />
+
+            <div className="min-w-0 flex-1">
+              <div className="mb-4">
+                <p className="text-sm text-stone-400 dark:text-stone-500">
+                  {filtered.length === allProducts.length
+                    ? `${allProducts.length} украшений`
+                    : `${filtered.length} из ${allProducts.length}`}
+                </p>
+              </div>
+
+              {/* Виртуальная сетка — в DOM всегда только видимые строки + буфер */}
+              {!loading && (
+                <VirtualGrid
+                  products={filtered}
+                  onProductClick={handleProductClick}
+                  animKey={filterVersion}
+                />
+              )}
+            </div>
+          </div>
+        </main>
+
+        {selectedProduct && (
+          <ProductModal
+            product={selectedProduct}
+            onClose={handleModalClose}
+          />
+        )}
+      </div>
+    </>
   )
 }

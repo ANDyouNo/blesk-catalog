@@ -23,7 +23,7 @@ function EmptyState() {
   )
 }
 
-export function VirtualGrid({ products, onProductClick }) {
+export function VirtualGrid({ products, onProductClick, animKey = 0 }) {
   const containerRef  = useRef(null)
   const [width, setWidth] = useState(0)
 
@@ -76,6 +76,14 @@ export function VirtualGrid({ products, onProductClick }) {
     return () => window.removeEventListener('resize', update)
   }, [width])
 
+  // Анимация появления рядов при первой загрузке и смене фильтров
+  const [isAnimating, setIsAnimating] = useState(true)
+  useEffect(() => {
+    setIsAnimating(true)
+    const t = setTimeout(() => setIsAnimating(false), 550)
+    return () => clearTimeout(t)
+  }, [animKey])
+
   const virtualizer = useWindowVirtualizer({
     count:        rows.length,
     estimateSize,
@@ -104,22 +112,31 @@ export function VirtualGrid({ products, onProductClick }) {
               transform: `translateY(${vRow.start - scrollMargin}px)`,
             }}
           >
-            {/* Строка сетки */}
+            {/* Анимация ряда — отдельный div, не конфликтует с transform позиционирования */}
             <div
-              style={{
-                display:             'grid',
-                gridTemplateColumns: `repeat(${cols}, 1fr)`,
-                gap:                 GAP,
-                paddingBottom:       GAP,
-              }}
+              className={isAnimating ? 'animate-row-in' : ''}
+              style={isAnimating ? {
+                animationDelay:    `${Math.min(vRow.index, 4) * 45}ms`,
+                animationFillMode: 'both',
+              } : undefined}
             >
-              {rows[vRow.index].map(product => (
-                <ProductCard
-                  key={product.id}
-                  product={product}
-                  onClick={() => onProductClick(product)}
-                />
-              ))}
+              {/* Строка сетки */}
+              <div
+                style={{
+                  display:             'grid',
+                  gridTemplateColumns: `repeat(${cols}, 1fr)`,
+                  gap:                 GAP,
+                  paddingBottom:       GAP,
+                }}
+              >
+                {rows[vRow.index].map(product => (
+                  <ProductCard
+                    key={product.id}
+                    product={product}
+                    onClick={() => onProductClick(product)}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         ))}
