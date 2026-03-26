@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useMemo, useCallback } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState, useMemo, useCallback } from 'react'
 import { useWindowVirtualizer } from '@tanstack/react-virtual'
 import { ProductCard } from './ProductCard'
 
@@ -76,9 +76,11 @@ export function VirtualGrid({ products, onProductClick, animKey = 0 }) {
     return () => window.removeEventListener('resize', update)
   }, [width])
 
-  // Анимация появления рядов при первой загрузке и смене фильтров
+  // Анимация появления рядов при первой загрузке и смене фильтров.
+  // useLayoutEffect — срабатывает до покраски, поэтому браузер никогда
+  // не видит кадр без класса анимации.
   const [isAnimating, setIsAnimating] = useState(true)
-  useEffect(() => {
+  useLayoutEffect(() => {
     setIsAnimating(true)
     const t = setTimeout(() => setIsAnimating(false), 550)
     return () => clearTimeout(t)
@@ -112,8 +114,11 @@ export function VirtualGrid({ products, onProductClick, animKey = 0 }) {
               transform: `translateY(${vRow.start - scrollMargin}px)`,
             }}
           >
-            {/* Анимация ряда — отдельный div, не конфликтует с transform позиционирования */}
+            {/* Анимация ряда — отдельный div, не конфликтует с transform позиционирования.
+                key меняется при isAnimating=true → React пересоздаёт DOM-элемент
+                → браузер гарантированно перезапускает CSS-анимацию. */}
             <div
+              key={isAnimating ? `${vRow.key}-a${animKey}` : String(vRow.key)}
               className={isAnimating ? 'animate-row-in' : ''}
               style={isAnimating ? {
                 animationDelay:    `${Math.min(vRow.index, 4) * 45}ms`,
