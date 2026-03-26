@@ -90,7 +90,7 @@ export function FilterPanel({
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto space-y-4 pr-1">
+      <div className="flex-1 overflow-y-auto space-y-4 pr-4" style={{ scrollbarGutter: 'stable' }}>
         {/* Поиск */}
         <FilterSection title="Артикул / поиск">
           <input
