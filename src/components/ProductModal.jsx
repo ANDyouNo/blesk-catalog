@@ -154,7 +154,7 @@ export function ProductModal({ product, onClose }) {
       onClick={e => { if (e.target === overlayRef.current) onClose() }}
     >
       {/* Оверлей */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/50" onClick={onClose} />
 
       {/* Контент */}
       <div className="relative z-10 flex w-full max-w-2xl flex-col overflow-hidden rounded-t-3xl bg-white shadow-2xl sm:rounded-3xl dark:bg-stone-900 max-h-[92dvh] animate-slide-up">
