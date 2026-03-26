@@ -27,15 +27,16 @@ export function VirtualGrid({ products, onProductClick, animKey = 0 }) {
   const containerRef  = useRef(null)
   const [width, setWidth] = useState(0)
 
-  // Следим за шириной контейнера через ResizeObserver
-  useEffect(() => {
+  // Следим за шириной контейнера через ResizeObserver.
+  // useLayoutEffect — срабатывает до покраски, поэтому начальная ширина
+  // известна уже в первом кадре и cols сразу вычисляется правильно.
+  useLayoutEffect(() => {
     if (!containerRef.current) return
     const ro = new ResizeObserver(entries => {
       const w = entries[0].contentRect.width
       if (w > 0) setWidth(w)
     })
     ro.observe(containerRef.current)
-    // Записываем начальное значение
     setWidth(containerRef.current.getBoundingClientRect().width)
     return () => ro.disconnect()
   }, [])
