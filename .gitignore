@@ -11,3 +11,5 @@ package-lock.json
 # public/images/
 __pycache__
 vite.config.js.timestamp*
+venv
+.venv
