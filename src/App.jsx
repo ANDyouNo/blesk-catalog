@@ -91,6 +91,7 @@ export default function App() {
 
   const handleFilterChange = useCallback((key, value) => {
     setFilters(prev => ({ ...prev, [key]: value }))
+    window.scrollTo({ top: 0, behavior: 'instant' })
   }, [])
 
   const handleReset = useCallback(() => setFilters(EMPTY_FILTERS), [])
