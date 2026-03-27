@@ -32,7 +32,7 @@ export const CONTACTS = {
   },
   max: {
     label: "Max",
-    url: "https://max.ru/blesk_store", // ← заменить на реальную ссылку
+    url: "https://max.ru/u/f9LHodD0cOLMHgkM3IZLsL2rVGltmPjYWr7vpaRRI9n0rBJP_8NgIu5dT8c", // ← заменить на реальную ссылку
   },
 };
 
