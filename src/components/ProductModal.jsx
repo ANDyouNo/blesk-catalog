@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useMemo } from 'react'
 import { X, Send, Check } from 'lucide-react'
 import { calcVariantPrice, getVariantWeight, formatPrice, formatWeight, cn } from '@/lib/utils'
 import { CONTACTS, MESSAGE_TEMPLATE } from '@/config/pricing'
+import { RingSizeGuide } from '@/components/RingSizeGuide'
 
 // ── Иконки мессенджеров ────────────────────────────────────────────────────────
 function TelegramIcon({ size = 20 }) {
@@ -58,6 +59,7 @@ export function ProductModal({ product, onClose }) {
   const overlayRef = useRef(null)
   const [selectedVariantKey, setSelectedVariantKey] = useState(null) // "source:index"
   const [copied, setCopied]                         = useState(false)
+  const [showRingGuide, setShowRingGuide]           = useState(false)
 
   // ── Строим плоский список вариантов ──────────────────────────────────────────
   const variants = useMemo(() => {
@@ -148,6 +150,7 @@ export function ProductModal({ product, onClose }) {
   }
 
   return (
+    <>
     <div
       ref={overlayRef}
       className="fixed inset-0 z-50 flex items-end justify-center sm:items-center p-0 sm:p-4 animate-fade-in"
@@ -266,6 +269,18 @@ export function ProductModal({ product, onClose }) {
             </div>
           </div>
 
+          {/* Кнопка определения размера — только для колец */}
+          {product.type === 'Кольцо' && (
+            <div className="px-5 pb-2">
+              <button
+                onClick={() => setShowRingGuide(true)}
+                className="flex w-full items-center justify-center gap-2 rounded-xl border border-stone-200 py-2.5 text-sm font-medium text-stone-600 transition-colors hover:border-gold-300 hover:bg-gold-50 hover:text-gold-700 dark:border-stone-700 dark:text-stone-400 dark:hover:border-gold-600/40 dark:hover:bg-gold-950/20 dark:hover:text-gold-400"
+              >
+                💍 Узнать мой размер кольца
+              </button>
+            </div>
+          )}
+
           {/* Блок связи */}
           <div className="border-t border-stone-100 px-5 pb-6 pt-4 dark:border-stone-800">
             <p className="mb-3 text-sm font-medium text-stone-700 dark:text-stone-300">
@@ -309,6 +324,12 @@ export function ProductModal({ product, onClose }) {
         </div>
       </div>
     </div>
+
+    {/* Гид по размерам — полноэкранный overlay поверх модалки */}
+    {showRingGuide && (
+      <RingSizeGuide onClose={() => setShowRingGuide(false)} />
+    )}
+    </>
   )
 }
 
