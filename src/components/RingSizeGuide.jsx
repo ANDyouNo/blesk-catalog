@@ -127,7 +127,7 @@ function ScreenTab() {
         </div>
 
         {/* Калибровочный отрезок */}
-        <div className="flex flex-col items-start gap-8">
+        <div className="flex flex-col items-start gap-2">
           <div className="flex items-center gap-3">
             <div
               className="h-1.5 bg-gold-500 transition-none"
@@ -137,14 +137,17 @@ function ScreenTab() {
               10 мм
             </span>
           </div>
-          <input
-            type="range" min={20} max={130} value={calibPx}
-            onChange={e => setCalibPx(Number(e.target.value))}
-            className="range-lg"
-          />
-          <div className="flex w-full justify-between text-xs text-stone-400">
-            <span>меньше</span>
-            <span>больше</span>
+          {/* Отступ под линейку — достаточно места, чтобы приложить линейку */}
+          <div className="mt-24 w-full space-y-3">
+            <input
+              type="range" min={20} max={130} value={calibPx}
+              onChange={e => setCalibPx(Number(e.target.value))}
+              className="range-lg"
+            />
+            <div className="flex w-full justify-between text-xs text-stone-400">
+              <span>меньше</span>
+              <span>больше</span>
+            </div>
           </div>
         </div>
 
@@ -191,7 +194,7 @@ function ScreenTab() {
       </div>
 
       {/* Ползунок диаметра */}
-      <div className="space-y-3">
+      <div className="space-y-3 pt-20">
         <input
           type="range" min={14} max={23} step={0.1} value={diamMm}
           onChange={e => setDiamMm(Number(e.target.value))}
@@ -692,16 +695,20 @@ export function RingSizeGuide({ onClose, productType = 'Кольцо' }) {
 
   return (
     <div
-      className="fixed inset-0 z-[60] flex items-end justify-center animate-fade-in sm:items-center"
-      onClick={onClose}
+      className="fixed inset-0 z-[60] flex flex-col animate-fade-in lg:items-center lg:justify-center"
     >
-      {/* Фон */}
-      <div className="absolute inset-0 bg-black/50" />
-
-      {/* Панель */}
+      {/* Фон — только на десктопе */}
       <div
-        className="relative z-10 flex w-full max-w-lg flex-col overflow-hidden rounded-t-3xl bg-white dark:bg-stone-950 sm:rounded-3xl"
-        style={{ maxHeight: '90dvh' }}
+        className="hidden lg:block absolute inset-0 bg-black/50"
+        onClick={onClose}
+      />
+
+      {/* Панель:
+          мобильный/планшет — на весь экран (h-full, без скругления)
+          десктоп (lg+)      — центрированное окно с max-w-2xl и скруглением */}
+      <div
+        className="relative z-10 flex h-full w-full flex-col overflow-hidden bg-white dark:bg-stone-950
+                   lg:h-auto lg:max-w-2xl lg:rounded-3xl lg:max-h-[90dvh]"
         onClick={e => e.stopPropagation()}
       >
         {/* Шапка */}

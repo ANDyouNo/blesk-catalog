@@ -142,12 +142,12 @@ export function ProductModal({ product, onClose }) {
       if (navigator.clipboard?.writeText) {
         await navigator.clipboard.writeText(message)
       } else {
-        // Fallback для мобильных браузеров без Clipboard API
+        // Fallback: readonly не показывает клавиатуру, top:-200px исключает скролл к элементу
         const el = document.createElement('textarea')
         el.value = message
-        el.style.cssText = 'position:fixed;top:0;left:0;opacity:0;font-size:16px;'
+        el.setAttribute('readonly', '')
+        el.style.cssText = 'position:fixed;top:-200px;left:0;opacity:0;pointer-events:none;font-size:16px;'
         document.body.appendChild(el)
-        el.focus()
         el.select()
         el.setSelectionRange(0, 99999)
         document.execCommand('copy')

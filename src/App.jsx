@@ -107,23 +107,30 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'instant' })
   }, [])
 
-  // Открытие модалки — сохраняем позицию и компенсируем ширину скроллбара
+  // Открытие модалки — фиксируем body (работает на iOS Safari)
   const handleProductClick = useCallback(product => {
-    scrollPosRef.current = window.scrollY
+    const scrollY = window.scrollY
+    scrollPosRef.current = scrollY
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
-    document.body.style.overflow = 'hidden'
+    // position:fixed + top предотвращает скролл на iOS (overflow:hidden там не работает)
+    document.body.style.position    = 'fixed'
+    document.body.style.top         = `-${scrollY}px`
+    document.body.style.left        = '0'
+    document.body.style.right       = '0'
     document.body.style.paddingRight = `${scrollbarWidth}px`
     setSelected(product)
   }, [])
 
-  // Закрытие — убираем компенсацию и восстанавливаем позицию
+  // Закрытие — убираем фиксацию и восстанавливаем позицию скролла
   const handleModalClose = useCallback(() => {
-    setSelected(null)
-    document.body.style.overflow = ''
+    const scrollY = parseFloat(document.body.style.top || '0') * -1
+    document.body.style.position    = ''
+    document.body.style.top         = ''
+    document.body.style.left        = ''
+    document.body.style.right       = ''
     document.body.style.paddingRight = ''
-    requestAnimationFrame(() => {
-      window.scrollTo({ top: scrollPosRef.current, behavior: 'instant' })
-    })
+    window.scrollTo({ top: scrollY, behavior: 'instant' })
+    setSelected(null)
   }, [])
 
   if (error) {
