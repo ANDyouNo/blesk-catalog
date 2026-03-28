@@ -28,7 +28,7 @@ export const CONTACTS = {
   },
   vk: {
     label: "ВКонтакте",
-    url: "https://vk.com/im/convo/-225434766?entrypoint=community_page&tab=all", // ← заменить на реальную ссылку
+    url: "https://vk.com/club225434766", // ← заменить на реальную ссылку
   },
   max: {
     label: "Max",
