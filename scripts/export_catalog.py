@@ -71,12 +71,27 @@ def normalize_type(product_type, subtype=None):
 
 # ── Нормализация размера ───────────────────────────────────────────────────────
 def normalize_size(size_str):
+    """
+    Нормализует строку размера к единому формату:
+      "16.0" → "16"   (целые — без .0)
+      "16.5" → "16.5" (дробные — одна десятичная)
+      "16,5" → "16.5" (замена запятой)
+    Это устраняет дублирование в фильтрах фронта (16 и 16.0 = одно и то же).
+    """
     if not size_str:
         return None
     s = size_str.strip().replace(",", ".")
     if s.lower() in ("без размера", "-", ""):
         return None
-    return s
+    try:
+        f = float(s)
+        # Целое число → без десятичной части (16.0 → "16")
+        if f == int(f):
+            return str(int(f))
+        # Дробное → одна десятичная (16.50 → "16.5")
+        return f"{f:.1f}"
+    except ValueError:
+        return s  # нечисловые размеры (напр. "OS") — оставляем как есть
 
 def parse_sizes(sizes_str):
     if not sizes_str:

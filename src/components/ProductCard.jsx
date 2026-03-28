@@ -48,7 +48,7 @@ export const ProductCard = memo(function ProductCard({ product, onClick }) {
       {/* Данные */}
       <div className="flex flex-1 flex-col gap-1 p-3">
         <div className="flex items-start justify-between gap-1">
-          <p className="text-xs font-medium leading-snug text-stone-800 dark:text-stone-200">
+          <p className="min-w-0 flex-1 text-xs font-medium leading-snug text-stone-800 dark:text-stone-200">
             {product.type}
           </p>
           <p className="shrink-0 text-[10px] text-stone-400 dark:text-stone-500">

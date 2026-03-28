@@ -71,3 +71,52 @@
            focus:ring-gold-400 dark:border-stone-600 dark:bg-stone-800;
   }
 }
+
+/* Крупный ползунок для тач-устройств (используется в RingSizeGuide) */
+.range-lg {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: #e7e5e4;
+  outline: none;
+  cursor: pointer;
+}
+.dark .range-lg {
+  background: #44403c;
+}
+.range-lg::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #c9961a;
+  border: 3px solid white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  margin-top: 0;
+  cursor: pointer;
+}
+.dark .range-lg::-webkit-slider-thumb {
+  border-color: #1c1917;
+}
+.range-lg::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #c9961a;
+  border: 3px solid white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+.dark .range-lg::-moz-range-thumb {
+  border-color: #1c1917;
+}
+.range-lg::-moz-range-track {
+  height: 4px;
+  background: #e7e5e4;
+  border-radius: 2px;
+}
+.dark .range-lg::-moz-range-track {
+  background: #44403c;
+}

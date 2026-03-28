@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, useMemo } from 'react'
-import { X, Send, Check } from 'lucide-react'
+import { X, Send, Check, Copy } from 'lucide-react'
 import { calcVariantPrice, getVariantWeight, formatPrice, formatWeight, cn } from '@/lib/utils'
 import { CONTACTS, MESSAGE_TEMPLATE } from '@/config/pricing'
 import { RingSizeGuide } from '@/components/RingSizeGuide'
@@ -137,11 +137,25 @@ export function ProductModal({ product, onClose }) {
 
   const message = MESSAGE_TEMPLATE(product.article)
 
-  function handleCopy() {
-    navigator.clipboard.writeText(message).then(() => {
+  async function handleCopy() {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(message)
+      } else {
+        // Fallback для мобильных браузеров без Clipboard API
+        const el = document.createElement('textarea')
+        el.value = message
+        el.style.cssText = 'position:fixed;top:0;left:0;opacity:0;font-size:16px;'
+        document.body.appendChild(el)
+        el.focus()
+        el.select()
+        el.setSelectionRange(0, 99999)
+        document.execCommand('copy')
+        document.body.removeChild(el)
+      }
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
-    })
+    } catch { /* silent fail */ }
   }
 
   function buildMessengerUrl(type, url) {
@@ -269,14 +283,16 @@ export function ProductModal({ product, onClose }) {
             </div>
           </div>
 
-          {/* Кнопка определения размера — только для колец */}
-          {product.type === 'Кольцо' && (
+          {/* Кнопка гида по размерам */}
+          {['Кольцо', 'Браслет', 'Цепь', 'Колье'].includes(product.type) && (
             <div className="px-5 pb-2">
               <button
                 onClick={() => setShowRingGuide(true)}
                 className="flex w-full items-center justify-center gap-2 rounded-xl border border-stone-200 py-2.5 text-sm font-medium text-stone-600 transition-colors hover:border-gold-300 hover:bg-gold-50 hover:text-gold-700 dark:border-stone-700 dark:text-stone-400 dark:hover:border-gold-600/40 dark:hover:bg-gold-950/20 dark:hover:text-gold-400"
               >
-                💍 Узнать мой размер кольца
+                {product.type === 'Кольцо'  && '💍 Узнать мой размер кольца'}
+                {product.type === 'Браслет' && '📏 Подобрать размер браслета'}
+                {(product.type === 'Цепь' || product.type === 'Колье') && '📐 Гид по длинам'}
               </button>
             </div>
           )}
@@ -287,20 +303,20 @@ export function ProductModal({ product, onClose }) {
               Напишите нам! 
             </p>
 
-            {/* Сообщение для копирования */}
-            <div className="mb-3 flex items-start gap-2 rounded-xl bg-stone-50 p-3 text-sm text-stone-600 dark:bg-stone-800 dark:text-stone-300">
+            {/* Сообщение для копирования — кликабельная зона */}
+            <button
+              onClick={handleCopy}
+              title="Нажмите, чтобы скопировать"
+              className="mb-3 flex w-full items-center gap-3 rounded-xl bg-stone-50 p-3 text-left text-sm text-stone-600 transition-colors active:bg-stone-100 dark:bg-stone-800 dark:text-stone-300 dark:active:bg-stone-700"
+            >
               <span className="flex-1 select-all">{message}</span>
-              <button
-                onClick={handleCopy}
-                title="Скопировать"
-                className="shrink-0 flex items-center justify-center w-6 h-6 rounded-lg transition-colors hover:bg-stone-200 dark:hover:bg-stone-700"
-              >
+              <span className="shrink-0 flex items-center justify-center w-8 h-8 rounded-lg bg-white shadow-sm dark:bg-stone-700">
                 {copied
-                  ? <Check size={14} className="text-emerald-500 dark:text-emerald-400" />
-                  : <Send size={14} className="text-stone-400" />
+                  ? <Check size={15} className="text-emerald-500 dark:text-emerald-400" />
+                  : <Copy size={15} className="text-stone-400" />
                 }
-              </button>
-            </div>
+              </span>
+            </button>
 
             {/* Кнопки мессенджеров */}
             <div className="flex gap-2">
@@ -325,9 +341,9 @@ export function ProductModal({ product, onClose }) {
       </div>
     </div>
 
-    {/* Гид по размерам — полноэкранный overlay поверх модалки */}
+    {/* Гид по размерам */}
     {showRingGuide && (
-      <RingSizeGuide onClose={() => setShowRingGuide(false)} />
+      <RingSizeGuide productType={product.type} onClose={() => setShowRingGuide(false)} />
     )}
     </>
   )
