@@ -207,7 +207,7 @@ export function ProductModal({ product, onClose }) {
                   src={product.image}
                   alt={`${product.type} ${product.article}`}
                   className="h-full w-full object-cover"
-                  onError={e => { e.currentTarget.src = '/images/placeholder.svg' }}
+                  onError={e => { e.currentTarget.src = `${import.meta.env.BASE_URL}images/placeholder.svg` }}
                 />
               ) : (
                 <div className="flex h-full w-full items-center justify-center text-stone-300 dark:text-stone-600">

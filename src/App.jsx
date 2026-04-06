@@ -44,7 +44,7 @@ export default function App() {
 
   // Загрузка данных
   useEffect(() => {
-    fetch('/catalog.json')
+    fetch(import.meta.env.BASE_URL + 'catalog.json')
       .then(r => { if (!r.ok) throw new Error('Не удалось загрузить каталог'); return r.json() })
       .then(data => {
         setAllProducts(data.products || [])

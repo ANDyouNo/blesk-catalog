@@ -28,7 +28,7 @@ export const ProductCard = memo(function ProductCard({ product, onClick }) {
             width="400"
             height="400"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-            onError={e => { e.currentTarget.src = '/images/placeholder.svg' }}
+            onError={e => { e.currentTarget.src = `${import.meta.env.BASE_URL}images/placeholder.svg` }}
           />
         ) : (
           <PlaceholderIcon />
