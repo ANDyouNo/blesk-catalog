@@ -1,6 +1,25 @@
 {
-  "generated_at": "2026-03-28T15:10:51",
+  "generated_at": "2026-04-07T11:18:49",
   "products": [
+    {
+      "id": "j_074259R030L17_Браслет",
+      "article": "074259R030L17",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Браслет",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925",
+      "inserts": null,
+      "image": "images/jewelry/074259R030L17.webp",
+      "sizes_in_stock": [
+        {
+          "size": "17",
+          "price": null,
+          "weight": 1.23
+        }
+      ],
+      "sizes_on_order": []
+    },
     {
       "id": "j_71800.5_Браслет",
       "article": "71800",
@@ -101,6 +120,25 @@
           "weight": null
         }
       ]
+    },
+    {
+      "id": "j_7438303А.5_Браслет",
+      "article": "7438303А",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Браслет",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "inserts": "4 Гранат. 1 Гранат. Фианит",
+      "image": "images/jewelry/7438303a.5.webp",
+      "sizes_in_stock": [
+        {
+          "size": "18",
+          "price": null,
+          "weight": 6.24
+        }
+      ],
+      "sizes_on_order": []
     },
     {
       "id": "j_7446809.5_Браслет",
@@ -231,6 +269,25 @@
           "size": "17",
           "price": 1400.0,
           "weight": 1.84
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
+      "id": "j_7485209А.5_Браслет",
+      "article": "7485209А",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Браслет",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "inserts": "4 Агат зеленый. 1 Агат зеленый. Фианит",
+      "image": "images/jewelry/7485209a.5.webp",
+      "sizes_in_stock": [
+        {
+          "size": "17",
+          "price": null,
+          "weight": 2.51
         }
       ],
       "sizes_on_order": []
@@ -680,6 +737,44 @@
       "sizes_on_order": []
     },
     {
+      "id": "j_870033_Браслет",
+      "article": "870033",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Браслет",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925",
+      "inserts": null,
+      "image": "images/jewelry/870033.webp",
+      "sizes_in_stock": [
+        {
+          "size": "18",
+          "price": null,
+          "weight": 4.06
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
+      "id": "j_87072_Браслет",
+      "article": "87072",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Браслет",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925",
+      "inserts": null,
+      "image": "images/jewelry/87072.webp",
+      "sizes_in_stock": [
+        {
+          "size": "17",
+          "price": null,
+          "weight": 4.19
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
       "id": "j_Б1НН27РО052080_Браслет",
       "article": "Б1НН27РО052080",
       "source": "jewelry",
@@ -699,11 +794,78 @@
       "sizes_on_order": []
     },
     {
-      "id": "j_71514А.5_Брошь",
+      "id": "j_БН235А2ЦР0-С88_Браслет",
+      "article": "БН235А2ЦР0-С88",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Браслет",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925",
+      "inserts": null,
+      "image": "images/jewelry/БН235А2ЦР0-С88.webp",
+      "sizes_in_stock": [
+        {
+          "size": "17",
+          "price": 600.0,
+          "weight": 0.97
+        },
+        {
+          "size": "18",
+          "price": 650.0,
+          "weight": 1.02
+        },
+        {
+          "size": "19",
+          "price": 700.0,
+          "weight": 1.07
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
+      "id": "j_БН255А2ЦР0-С88_Браслет",
+      "article": "БН255А2ЦР0-С88",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Браслет",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925",
+      "inserts": null,
+      "image": "images/jewelry/БН255А2ЦР0-С88.webp",
+      "sizes_in_stock": [
+        {
+          "size": "20",
+          "price": null,
+          "weight": 3.11
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
+      "id": "j_БР280СА6ЦР0-С88_Браслет",
+      "article": "БР280СА6ЦР0-С88",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Браслет",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925",
+      "inserts": null,
+      "image": "images/jewelry/БР280СА6ЦР0-С88.webp",
+      "sizes_in_stock": [
+        {
+          "size": "22",
+          "price": null,
+          "weight": 5.77
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
+      "id": "j_71514А.5_Броши и Булавки",
       "article": "71514А",
       "source": "jewelry",
       "status": "in_stock",
-      "type": "Брошь",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "inserts": null,
@@ -718,11 +880,11 @@
       "sizes_on_order": []
     },
     {
-      "id": "j_72585.5_Брошь",
+      "id": "j_72585.5_Броши и Булавки",
       "article": "72585",
       "source": "jewelry",
       "status": "in_stock",
-      "type": "Брошь",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "inserts": null,
@@ -737,11 +899,11 @@
       "sizes_on_order": []
     },
     {
-      "id": "j_72631Г.5_Брошь",
+      "id": "j_72631Г.5_Броши и Булавки",
       "article": "72631Г",
       "source": "jewelry",
       "status": "in_stock",
-      "type": "Брошь",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "inserts": null,
@@ -756,11 +918,11 @@
       "sizes_on_order": []
     },
     {
-      "id": "j_7272237.5_Брошь",
+      "id": "j_7272237.5_Броши и Булавки",
       "article": "7272237",
       "source": "jewelry",
       "status": "in_stock",
-      "type": "Брошь",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "inserts": null,
@@ -775,11 +937,11 @@
       "sizes_on_order": []
     },
     {
-      "id": "j_77364А.5_Брошь",
+      "id": "j_77364А.5_Броши и Булавки",
       "article": "77364А",
       "source": "jewelry",
       "status": "in_stock",
-      "type": "Брошь",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "inserts": null,
@@ -794,11 +956,11 @@
       "sizes_on_order": []
     },
     {
-      "id": "j_77449А.5_Брошь",
+      "id": "j_77449А.5_Броши и Булавки",
       "article": "77449А",
       "source": "merged",
       "status": "merged",
-      "type": "Брошь",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "inserts": null,
@@ -819,11 +981,11 @@
       ]
     },
     {
-      "id": "j_77467А.5_Брошь",
+      "id": "j_77467А.5_Броши и Булавки",
       "article": "77467А",
-      "source": "jewelry",
-      "status": "in_stock",
-      "type": "Брошь",
+      "source": "merged",
+      "status": "merged",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "inserts": null,
@@ -835,14 +997,20 @@
           "weight": 0.99
         }
       ],
-      "sizes_on_order": []
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 608.0,
+          "weight": null
+        }
+      ]
     },
     {
-      "id": "j_77479АГ.5_Брошь",
+      "id": "j_77479АГ.5_Броши и Булавки",
       "article": "77479АГ",
       "source": "jewelry",
       "status": "in_stock",
-      "type": "Брошь",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "inserts": null,
@@ -857,11 +1025,11 @@
       "sizes_on_order": []
     },
     {
-      "id": "j_77487Н.5_Брошь",
+      "id": "j_77487Н.5_Броши и Булавки",
       "article": "77487Н",
-      "source": "jewelry",
-      "status": "in_stock",
-      "type": "Брошь",
+      "source": "merged",
+      "status": "merged",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "inserts": null,
@@ -873,14 +1041,20 @@
           "weight": 1.44
         }
       ],
-      "sizes_on_order": []
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 973.0,
+          "weight": null
+        }
+      ]
     },
     {
-      "id": "j_77508А.5_Брошь",
+      "id": "j_77508А.5_Броши и Булавки",
       "article": "77508А",
       "source": "jewelry",
       "status": "in_stock",
-      "type": "Брошь",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "inserts": null,
@@ -890,101 +1064,6 @@
           "size": null,
           "price": 2150.0,
           "weight": 1.38
-        }
-      ],
-      "sizes_on_order": []
-    },
-    {
-      "id": "j_14705.5_Икона",
-      "article": "14705",
-      "source": "jewelry",
-      "status": "in_stock",
-      "type": "Икона",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "inserts": null,
-      "image": "images/jewelry/14705_5.webp",
-      "sizes_in_stock": [
-        {
-          "size": null,
-          "price": 3050.0,
-          "weight": 2.07
-        }
-      ],
-      "sizes_on_order": []
-    },
-    {
-      "id": "j_14756.5_Икона",
-      "article": "14756",
-      "source": "jewelry",
-      "status": "in_stock",
-      "type": "Икона",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "inserts": null,
-      "image": "images/jewelry/14756.5.webp",
-      "sizes_in_stock": [
-        {
-          "size": null,
-          "price": 2100.0,
-          "weight": 1.42
-        }
-      ],
-      "sizes_on_order": []
-    },
-    {
-      "id": "j_20419А.5_Икона",
-      "article": "20419А",
-      "source": "jewelry",
-      "status": "in_stock",
-      "type": "Икона",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "inserts": null,
-      "image": "images/jewelry/20419a.5.webp",
-      "sizes_in_stock": [
-        {
-          "size": null,
-          "price": 4450.0,
-          "weight": 3.01
-        }
-      ],
-      "sizes_on_order": []
-    },
-    {
-      "id": "j_20684А.5_Икона",
-      "article": "20684А",
-      "source": "jewelry",
-      "status": "in_stock",
-      "type": "Икона",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "inserts": null,
-      "image": "images/jewelry/20684a.5.webp",
-      "sizes_in_stock": [
-        {
-          "size": null,
-          "price": 5500.0,
-          "weight": 3.72
-        }
-      ],
-      "sizes_on_order": []
-    },
-    {
-      "id": "j_22215А.5_Икона",
-      "article": "22215А",
-      "source": "jewelry",
-      "status": "in_stock",
-      "type": "Икона",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "inserts": null,
-      "image": "images/jewelry/22215a.5.webp",
-      "sizes_in_stock": [
-        {
-          "size": null,
-          "price": 2400.0,
-          "weight": 1.63
         }
       ],
       "sizes_on_order": []
@@ -1427,6 +1506,35 @@
       "sizes_on_order": []
     },
     {
+      "id": "j_86112_Колье",
+      "article": "86112",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Колье",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925",
+      "inserts": null,
+      "image": "images/jewelry/86112.webp",
+      "sizes_in_stock": [
+        {
+          "size": "45",
+          "price": null,
+          "weight": 1.24
+        },
+        {
+          "size": "50",
+          "price": null,
+          "weight": 1.26
+        },
+        {
+          "size": "55",
+          "price": null,
+          "weight": 1.24
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
       "id": "j_019583_Кольцо",
       "article": "019583",
       "source": "jewelry",
@@ -1499,6 +1607,11 @@
           "size": "18",
           "price": 19850.0,
           "weight": 1.44
+        },
+        {
+          "size": "18.5",
+          "price": null,
+          "weight": 1.42
         },
         {
           "size": "19",
@@ -3599,6 +3712,31 @@
         {
           "size": "20",
           "price": 1261.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "j_600767А.1_Кольцо",
+      "article": "600767А",
+      "source": "merged",
+      "status": "merged",
+      "type": "Кольцо",
+      "metal_group": "Золото 585",
+      "metal_display": "Золото 585 красное",
+      "inserts": "Фианит",
+      "image": "images/jewelry/600767a.1.webp",
+      "sizes_in_stock": [
+        {
+          "size": "17.5",
+          "price": null,
+          "weight": 1.63
+        }
+      ],
+      "sizes_on_order": [
+        {
+          "size": "17",
+          "price": 15350.0,
           "weight": null
         }
       ]
@@ -9367,6 +9505,31 @@
       "sizes_on_order": []
     },
     {
+      "id": "j_11822.1_Крест",
+      "article": "11822",
+      "source": "merged",
+      "status": "merged",
+      "type": "Крест",
+      "metal_group": "Золото 585",
+      "metal_display": "Золото 585 красное",
+      "inserts": null,
+      "image": "images/jewelry/11822.1.webp",
+      "sizes_in_stock": [
+        {
+          "size": null,
+          "price": null,
+          "weight": 1.31
+        }
+      ],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 13635.0,
+          "weight": null
+        }
+      ]
+    },
+    {
       "id": "j_11826.5_Крест",
       "article": "11826",
       "source": "merged",
@@ -10794,6 +10957,31 @@
       "sizes_on_order": []
     },
     {
+      "id": "j_75568.1_Пирсинг",
+      "article": "75568",
+      "source": "merged",
+      "status": "merged",
+      "type": "Пирсинг",
+      "metal_group": "Золото 585",
+      "metal_display": "Золото 585 красное",
+      "inserts": "Фианит",
+      "image": "images/jewelry/75568.1.webp",
+      "sizes_in_stock": [
+        {
+          "size": null,
+          "price": null,
+          "weight": 0.15
+        }
+      ],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1472.0,
+          "weight": null
+        }
+      ]
+    },
+    {
       "id": "j_75571.5_Пирсинг",
       "article": "75571",
       "source": "jewelry",
@@ -10849,6 +11037,50 @@
         }
       ],
       "sizes_on_order": []
+    },
+    {
+      "id": "j_14705.5_Подвеска",
+      "article": "14705",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Подвеска",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "inserts": null,
+      "image": "images/jewelry/14705_5.webp",
+      "sizes_in_stock": [
+        {
+          "size": null,
+          "price": 3050.0,
+          "weight": 2.07
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
+      "id": "j_14756.5_Подвеска",
+      "article": "14756",
+      "source": "merged",
+      "status": "merged",
+      "type": "Подвеска",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "inserts": null,
+      "image": "images/jewelry/14756.5.webp",
+      "sizes_in_stock": [
+        {
+          "size": null,
+          "price": 2100.0,
+          "weight": 1.42
+        }
+      ],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 746.0,
+          "weight": null
+        }
+      ]
     },
     {
       "id": "j_16039.5_Подвеска",
@@ -11119,6 +11351,31 @@
       ]
     },
     {
+      "id": "j_20419А.5_Подвеска",
+      "article": "20419А",
+      "source": "merged",
+      "status": "merged",
+      "type": "Подвеска",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "inserts": null,
+      "image": "images/jewelry/20419a.5.webp",
+      "sizes_in_stock": [
+        {
+          "size": null,
+          "price": 4450.0,
+          "weight": 3.01
+        }
+      ],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1892.0,
+          "weight": null
+        }
+      ]
+    },
+    {
       "id": "j_20539А.5_Подвеска",
       "article": "20539А",
       "source": "merged",
@@ -11167,6 +11424,25 @@
           "weight": null
         }
       ]
+    },
+    {
+      "id": "j_20684А.5_Подвеска",
+      "article": "20684А",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Подвеска",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "inserts": null,
+      "image": "images/jewelry/20684a.5.webp",
+      "sizes_in_stock": [
+        {
+          "size": null,
+          "price": 5500.0,
+          "weight": 3.72
+        }
+      ],
+      "sizes_on_order": []
     },
     {
       "id": "j_20842А.5_Подвеска",
@@ -11302,6 +11578,31 @@
         {
           "size": null,
           "price": 431.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "j_22215А.5_Подвеска",
+      "article": "22215А",
+      "source": "merged",
+      "status": "merged",
+      "type": "Подвеска",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "inserts": null,
+      "image": "images/jewelry/22215a.5.webp",
+      "sizes_in_stock": [
+        {
+          "size": null,
+          "price": 2400.0,
+          "weight": 1.63
+        }
+      ],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1066.0,
           "weight": null
         }
       ]
@@ -16851,6 +17152,31 @@
       ]
     },
     {
+      "id": "j_401100А.1_Серьги",
+      "article": "401100А",
+      "source": "merged",
+      "status": "merged",
+      "type": "Серьги",
+      "metal_group": "Золото 585",
+      "metal_display": "Золото 585 красное",
+      "inserts": "Фианит",
+      "image": "images/jewelry/401100a.1.webp",
+      "sizes_in_stock": [
+        {
+          "size": null,
+          "price": null,
+          "weight": 2.46
+        }
+      ],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 22733.0,
+          "weight": null
+        }
+      ]
+    },
+    {
       "id": "j_40757Ч.5_Серьги",
       "article": "40757Ч",
       "source": "jewelry",
@@ -17795,6 +18121,31 @@
       ]
     },
     {
+      "id": "j_43069.1_Серьги",
+      "article": "43069",
+      "source": "merged",
+      "status": "merged",
+      "type": "Серьги",
+      "metal_group": "Золото 585",
+      "metal_display": "Золото 585 красное",
+      "inserts": "Фианит",
+      "image": "images/jewelry/43069.1.webp",
+      "sizes_in_stock": [
+        {
+          "size": null,
+          "price": null,
+          "weight": 2.67
+        }
+      ],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 25039.0,
+          "weight": null
+        }
+      ]
+    },
+    {
       "id": "j_43087А.5_Серьги",
       "article": "43087А",
       "source": "merged",
@@ -18718,6 +19069,44 @@
           "size": null,
           "price": 6300.0,
           "weight": 3.15
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
+      "id": "j_45032208А.5_Серьги",
+      "article": "45032208А",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Серьги",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "inserts": "2 Топаз. 8 Топаз. Фианит",
+      "image": "images/jewelry/45032208a.5.webp",
+      "sizes_in_stock": [
+        {
+          "size": null,
+          "price": null,
+          "weight": 2.17
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
+      "id": "j_45032209А.5_Серьги",
+      "article": "45032209А",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Серьги",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "inserts": "2 Агат зеленый. 8 Агат зеленый. Фианит",
+      "image": "images/jewelry/45032209a.5.webp",
+      "sizes_in_stock": [
+        {
+          "size": null,
+          "price": null,
+          "weight": 2.13
         }
       ],
       "sizes_on_order": []
@@ -22649,6 +23038,11 @@
           "size": null,
           "price": 26300.0,
           "weight": 1.88
+        },
+        {
+          "size": null,
+          "price": null,
+          "weight": 1.91
         }
       ],
       "sizes_on_order": [
@@ -23053,6 +23447,63 @@
       "sizes_on_order": []
     },
     {
+      "id": "j_72003_Серьги",
+      "article": "72003",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Серьги",
+      "metal_group": "Золото 585",
+      "metal_display": "Золото 585",
+      "inserts": null,
+      "image": "images/jewelry/72003.webp",
+      "sizes_in_stock": [
+        {
+          "size": null,
+          "price": null,
+          "weight": 1.19
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
+      "id": "j_72352_Серьги",
+      "article": "72352",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Серьги",
+      "metal_group": "Золото 585",
+      "metal_display": "Золото 585",
+      "inserts": null,
+      "image": "images/jewelry/72352.webp",
+      "sizes_in_stock": [
+        {
+          "size": null,
+          "price": null,
+          "weight": 0.95
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
+      "id": "j_72354_Серьги",
+      "article": "72354",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Серьги",
+      "metal_group": "Золото 585",
+      "metal_display": "Золото 585",
+      "inserts": null,
+      "image": "images/jewelry/72354.webp",
+      "sizes_in_stock": [
+        {
+          "size": null,
+          "price": null,
+          "weight": 1.44
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
       "id": "j_73017_Серьги",
       "article": "73017",
       "source": "jewelry",
@@ -23257,6 +23708,25 @@
           "size": "55",
           "price": 3450.0,
           "weight": 3.45
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
+      "id": "j_72070382160_Цепь",
+      "article": "72070382160",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Цепь",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925",
+      "inserts": null,
+      "image": "images/jewelry/72070382160.webp",
+      "sizes_in_stock": [
+        {
+          "size": "60",
+          "price": null,
+          "weight": 17.14
         }
       ],
       "sizes_on_order": []
@@ -24138,6 +24608,25 @@
       "sizes_on_order": []
     },
     {
+      "id": "j_81070370160_Цепь",
+      "article": "81070370160",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Цепь",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925",
+      "inserts": null,
+      "image": "images/jewelry/81070370160.webp",
+      "sizes_in_stock": [
+        {
+          "size": "60",
+          "price": null,
+          "weight": 17.33
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
       "id": "j_81080500150_Цепь",
       "article": "81080500150",
       "source": "jewelry",
@@ -24399,6 +24888,25 @@
           "size": "55",
           "price": 6150.0,
           "weight": 6.15
+        }
+      ],
+      "sizes_on_order": []
+    },
+    {
+      "id": "j_ЦГРП270СА6ЦРО-С88_Цепь",
+      "article": "ЦГРП270СА6ЦРО-С88",
+      "source": "jewelry",
+      "status": "in_stock",
+      "type": "Цепь",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925",
+      "inserts": null,
+      "image": "images/jewelry/ЦГРП270СА6ЦРО-С88.webp",
+      "sizes_in_stock": [
+        {
+          "size": "45",
+          "price": null,
+          "weight": 12.3
         }
       ],
       "sizes_on_order": []
@@ -27867,1229 +28375,11 @@
       ]
     },
     {
-      "id": "a_2520",
-      "article": "72611А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Золото 585",
-      "metal_display": "Золото 585 красное",
-      "weight": 2.44,
-      "avg_weight": 2.44,
-      "inserts": null,
-      "image": "images/aquamarine/72611А.1.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 23705.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_117551",
-      "article": "72673",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 1.76,
-      "avg_weight": 1.76,
-      "inserts": null,
-      "image": "images/aquamarine/72673.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1003.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_123247",
-      "article": "72750",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 2.97,
-      "avg_weight": 2.97,
-      "inserts": null,
-      "image": "images/aquamarine/72750.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1663.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_11232476",
-      "article": "72750",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 золочение",
-      "weight": 2.97,
-      "avg_weight": 2.97,
-      "inserts": null,
-      "image": "images/aquamarine/72750.6.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1663.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_80310",
-      "article": "72755А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Золото 585",
-      "metal_display": "Золото 585 красное",
-      "weight": 3.91,
-      "avg_weight": 3.91,
-      "inserts": null,
-      "image": "images/aquamarine/72755А.1.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 37849.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_187367",
-      "article": "77349А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 золочение",
-      "weight": 2.9,
-      "avg_weight": 2.9,
-      "inserts": null,
-      "image": "images/aquamarine/77349А.6.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1784.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_205378",
-      "article": "77352",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 1.35,
-      "avg_weight": 1.35,
-      "inserts": null,
-      "image": "images/aquamarine/77352.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 769.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_209376",
-      "article": "77363А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Золото 585",
-      "metal_display": "Золото 585 красное",
-      "weight": 3.75,
-      "avg_weight": 3.75,
-      "inserts": null,
-      "image": "images/aquamarine/77363А.1.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 36394.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_209377",
-      "article": "77363А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.0,
-      "avg_weight": 3.0,
-      "inserts": null,
-      "image": "images/aquamarine/77363А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1770.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_12093776",
-      "article": "77363А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 золочение",
-      "weight": 3.0,
-      "avg_weight": 3.0,
-      "inserts": null,
-      "image": "images/aquamarine/77363А.6.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1770.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_209139",
-      "article": "77368А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 2.0,
-      "avg_weight": 2.0,
-      "inserts": null,
-      "image": "images/aquamarine/77368А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1230.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_209140",
-      "article": "77369А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.15,
-      "avg_weight": 3.15,
-      "inserts": null,
-      "image": "images/aquamarine/77369А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1937.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_209382",
-      "article": "77371А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 2.8,
-      "avg_weight": 2.8,
-      "inserts": null,
-      "image": "images/aquamarine/77371А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1652.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_218740",
-      "article": "77378",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 1.75,
-      "avg_weight": 1.75,
-      "inserts": null,
-      "image": "images/aquamarine/77378.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1260.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_217914",
-      "article": "77379А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 2.9,
-      "avg_weight": 2.9,
-      "inserts": null,
-      "image": "images/aquamarine/77379А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2088.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_226505",
-      "article": "77391А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 2.25,
-      "avg_weight": 2.25,
-      "inserts": null,
-      "image": "images/aquamarine/77391А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1384.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_230178",
-      "article": "77399А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Золото 585",
-      "metal_display": "Золото 585 красное",
-      "weight": 2.5,
-      "avg_weight": 2.5,
-      "inserts": null,
-      "image": "images/aquamarine/77399А.1.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 24288.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_230179",
-      "article": "77399А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 2.13,
-      "avg_weight": 2.13,
-      "inserts": null,
-      "image": "images/aquamarine/77399А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1310.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_231317",
-      "article": "77403А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 2.86,
-      "avg_weight": 2.86,
-      "inserts": null,
-      "image": "images/aquamarine/77403А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1759.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_230709",
-      "article": "77405",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 2.51,
-      "avg_weight": 2.51,
-      "inserts": null,
-      "image": "images/aquamarine/77405.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1431.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_235804",
-      "article": "77412А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.25,
-      "avg_weight": 3.25,
-      "inserts": null,
-      "image": "images/aquamarine/77412А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1999.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_239369",
-      "article": "77413",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 4.12,
-      "avg_weight": 4.12,
-      "inserts": null,
-      "image": "images/aquamarine/77413.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2348.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_239372",
-      "article": "77425А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 1.72,
-      "avg_weight": 1.72,
-      "inserts": null,
-      "image": "images/aquamarine/77425А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1058.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_12393726",
-      "article": "77425А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 золочение",
-      "weight": 1.72,
-      "avg_weight": 1.72,
-      "inserts": null,
-      "image": "images/aquamarine/77425А.6.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1058.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_242687",
-      "article": "77427А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 2.48,
-      "avg_weight": 2.48,
-      "inserts": null,
-      "image": "images/aquamarine/77427А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1525.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_246584",
-      "article": "77428А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 4.2,
-      "avg_weight": 4.2,
-      "inserts": null,
-      "image": "images/aquamarine/77428А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2583.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_12465846",
-      "article": "77428А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 золочение",
-      "weight": 4.2,
-      "avg_weight": 4.2,
-      "inserts": null,
-      "image": "images/aquamarine/77428А.6.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2583.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_251262",
-      "article": "77430",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 1.61,
-      "avg_weight": 1.61,
-      "inserts": null,
-      "image": "images/aquamarine/77430.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 918.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_252886",
-      "article": "77431А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.01,
-      "avg_weight": 3.01,
-      "inserts": null,
-      "image": "images/aquamarine/77431А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1851.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_252889",
-      "article": "77432А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.3,
-      "avg_weight": 3.3,
-      "inserts": null,
-      "image": "images/aquamarine/77432А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2030.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_252890",
-      "article": "77433А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 2.1,
-      "avg_weight": 2.1,
-      "inserts": null,
-      "image": "images/aquamarine/77433А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1292.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_252892",
-      "article": "77439",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 1.6,
-      "avg_weight": 1.6,
-      "inserts": null,
-      "image": "images/aquamarine/77439.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 912.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_254017",
-      "article": "77444А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 2.55,
-      "avg_weight": 2.55,
-      "inserts": null,
-      "image": "images/aquamarine/77444А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1568.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_12540176",
-      "article": "77444А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 золочение",
-      "weight": 2.55,
-      "avg_weight": 2.55,
-      "inserts": null,
-      "image": "images/aquamarine/77444А.6.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1568.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_257311",
-      "article": "77445А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.85,
-      "avg_weight": 3.85,
-      "inserts": "11 Фианит",
-      "image": "images/aquamarine/77445А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2368.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_12573116",
-      "article": "77445А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 золочение",
-      "weight": 3.85,
-      "avg_weight": 3.85,
-      "inserts": "11 Фианит",
-      "image": "images/aquamarine/77445А.6.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2368.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_257313",
-      "article": "77457А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 5.0,
-      "avg_weight": 5.0,
-      "inserts": null,
-      "image": "images/aquamarine/77457А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 3075.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_261041",
-      "article": "77458А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 4.27,
-      "avg_weight": 4.27,
-      "inserts": null,
-      "image": "images/aquamarine/77458А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2626.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_258536",
-      "article": "77459",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.4,
-      "avg_weight": 3.4,
-      "inserts": null,
-      "image": "images/aquamarine/77459.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1938.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_259475",
-      "article": "77460Г",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 2.47,
-      "avg_weight": 2.47,
-      "inserts": "2 Наноизумруд",
-      "image": "images/aquamarine/77460Г.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1544.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_260831",
-      "article": "77471АГЧ",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 2.94,
-      "avg_weight": 2.94,
-      "inserts": null,
-      "image": "images/aquamarine/77471АГЧ.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1882.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_262256",
-      "article": "7747292А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 2.8,
-      "avg_weight": 2.8,
-      "inserts": "1 Нанотопаз лондон иск.; 23 Фианит",
-      "image": "images/aquamarine/7747292А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1928.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_263608",
-      "article": "77473АБ",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.65,
-      "avg_weight": 3.65,
-      "inserts": "1 Наносапфир; 47 Фианит; Эмаль",
-      "image": "images/aquamarine/77473АБ.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2354.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_263383",
-      "article": "77474Г",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.95,
-      "avg_weight": 3.95,
-      "inserts": "1 Наноизумруд; 38 Наноизумруд; Эмаль",
-      "image": "images/aquamarine/77474Г.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2528.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_264417",
-      "article": "7747830АЧ",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 4.55,
-      "avg_weight": 4.55,
-      "inserts": "5 Топаз Свисс Блю; 5 Аметист; 27 Фианит; 2 Нанокристалл; 12 Фианит; 4 Фианит",
-      "image": "images/aquamarine/7747830АЧ.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 4381.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_266460",
-      "article": "77480",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.2,
-      "avg_weight": 3.2,
-      "inserts": null,
-      "image": "images/aquamarine/77480.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1824.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_12664606",
-      "article": "77480",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 золочение",
-      "weight": 3.2,
-      "avg_weight": 3.2,
-      "inserts": null,
-      "image": "images/aquamarine/77480.6.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1824.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_265147",
-      "article": "77481АЧ",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.55,
-      "avg_weight": 3.55,
-      "inserts": null,
-      "image": "images/aquamarine/77481АЧ.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2219.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_266228",
-      "article": "77484А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.5,
-      "avg_weight": 3.5,
-      "inserts": null,
-      "image": "images/aquamarine/77484А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2065.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_12662286",
-      "article": "77484А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 золочение",
-      "weight": 3.5,
-      "avg_weight": 3.5,
-      "inserts": null,
-      "image": "images/aquamarine/77484А.6.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2065.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_265150",
-      "article": "77485А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 2.95,
-      "avg_weight": 2.95,
-      "inserts": null,
-      "image": "images/aquamarine/77485А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1814.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_265562",
-      "article": "77486А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 золочение",
-      "weight": 2.1,
-      "avg_weight": 2.1,
-      "inserts": null,
-      "image": "images/aquamarine/77486А.6.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1292.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_266463",
-      "article": "77501А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.65,
-      "avg_weight": 3.65,
-      "inserts": null,
-      "image": "images/aquamarine/77501А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2245.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_12664636",
-      "article": "77501А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 золочение",
-      "weight": 3.65,
-      "avg_weight": 3.65,
-      "inserts": null,
-      "image": "images/aquamarine/77501А.6.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2245.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_267120",
-      "article": "77502А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.5,
-      "avg_weight": 3.5,
-      "inserts": null,
-      "image": "images/aquamarine/77502А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 2153.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_265821",
-      "article": "77503",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.25,
-      "avg_weight": 3.25,
-      "inserts": null,
-      "image": "images/aquamarine/77503.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1852.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_12658216",
-      "article": "77503",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 золочение",
-      "weight": 3.25,
-      "avg_weight": 3.25,
-      "inserts": null,
-      "image": "images/aquamarine/77503.6.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1852.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_267826",
-      "article": "77532",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Брошь",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 6.82,
-      "avg_weight": 6.82,
-      "inserts": null,
-      "image": "images/aquamarine/77532.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 3887.0,
-          "weight": null
-        }
-      ]
-    },
-    {
       "id": "a_2583",
       "article": "70486А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 1.25,
@@ -29110,7 +28400,7 @@
       "article": "71500",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 1.09,
@@ -29131,7 +28421,7 @@
       "article": "71513А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 1.45,
@@ -29152,7 +28442,7 @@
       "article": "71520А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 0.94,
@@ -29173,7 +28463,7 @@
       "article": "71526",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 0.78,
@@ -29194,7 +28484,7 @@
       "article": "72557Г",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 1.23,
@@ -29215,7 +28505,7 @@
       "article": "72557Г",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 золочение",
       "weight": 1.23,
@@ -29236,7 +28526,7 @@
       "article": "72581",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 0.9,
@@ -29257,7 +28547,7 @@
       "article": "72586",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 золочение",
       "weight": 0.99,
@@ -29278,7 +28568,7 @@
       "article": "72607",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 1.3,
@@ -29295,11 +28585,32 @@
       ]
     },
     {
+      "id": "a_2520",
+      "article": "72611А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Золото 585",
+      "metal_display": "Золото 585 красное",
+      "weight": 2.44,
+      "avg_weight": 2.44,
+      "inserts": null,
+      "image": "images/aquamarine/72611А.1.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 23705.0,
+          "weight": null
+        }
+      ]
+    },
+    {
       "id": "a_2672",
       "article": "72631А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 золочение",
       "weight": 1.9,
@@ -29316,11 +28627,32 @@
       ]
     },
     {
+      "id": "a_117551",
+      "article": "72673",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 1.76,
+      "avg_weight": 1.76,
+      "inserts": null,
+      "image": "images/aquamarine/72673.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1003.0,
+          "weight": null
+        }
+      ]
+    },
+    {
       "id": "a_2712",
       "article": "72686Г",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 0.81,
@@ -29341,7 +28673,7 @@
       "article": "72689А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 0.87,
@@ -29362,7 +28694,7 @@
       "article": "72689А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 золочение",
       "weight": 0.87,
@@ -29383,7 +28715,7 @@
       "article": "72712А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 1.08,
@@ -29404,7 +28736,7 @@
       "article": "7272009А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 1.56,
@@ -29425,7 +28757,7 @@
       "article": "7272137",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 1.36,
@@ -29446,7 +28778,7 @@
       "article": "7272331",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 1.5,
@@ -29463,11 +28795,74 @@
       ]
     },
     {
+      "id": "a_123247",
+      "article": "72750",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 2.97,
+      "avg_weight": 2.97,
+      "inserts": null,
+      "image": "images/aquamarine/72750.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1663.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_11232476",
+      "article": "72750",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 золочение",
+      "weight": 2.97,
+      "avg_weight": 2.97,
+      "inserts": null,
+      "image": "images/aquamarine/72750.6.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1663.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_80310",
+      "article": "72755А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Золото 585",
+      "metal_display": "Золото 585 красное",
+      "weight": 3.91,
+      "avg_weight": 3.91,
+      "inserts": null,
+      "image": "images/aquamarine/72755А.1.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 37849.0,
+          "weight": null
+        }
+      ]
+    },
+    {
       "id": "a_181711",
       "article": "72781",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 1.19,
@@ -29488,7 +28883,7 @@
       "article": "77317",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 1.08,
@@ -29509,7 +28904,7 @@
       "article": "77318",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 1.41,
@@ -29526,11 +28921,326 @@
       ]
     },
     {
+      "id": "a_187367",
+      "article": "77349А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 золочение",
+      "weight": 2.9,
+      "avg_weight": 2.9,
+      "inserts": null,
+      "image": "images/aquamarine/77349А.6.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1784.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_205378",
+      "article": "77352",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 1.35,
+      "avg_weight": 1.35,
+      "inserts": null,
+      "image": "images/aquamarine/77352.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 769.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_209376",
+      "article": "77363А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Золото 585",
+      "metal_display": "Золото 585 красное",
+      "weight": 3.75,
+      "avg_weight": 3.75,
+      "inserts": null,
+      "image": "images/aquamarine/77363А.1.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 36394.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_209377",
+      "article": "77363А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 3.0,
+      "avg_weight": 3.0,
+      "inserts": null,
+      "image": "images/aquamarine/77363А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1770.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_12093776",
+      "article": "77363А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 золочение",
+      "weight": 3.0,
+      "avg_weight": 3.0,
+      "inserts": null,
+      "image": "images/aquamarine/77363А.6.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1770.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_209139",
+      "article": "77368А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 2.0,
+      "avg_weight": 2.0,
+      "inserts": null,
+      "image": "images/aquamarine/77368А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1230.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_209140",
+      "article": "77369А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 3.15,
+      "avg_weight": 3.15,
+      "inserts": null,
+      "image": "images/aquamarine/77369А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1937.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_209382",
+      "article": "77371А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 2.8,
+      "avg_weight": 2.8,
+      "inserts": null,
+      "image": "images/aquamarine/77371А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1652.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_218740",
+      "article": "77378",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 1.75,
+      "avg_weight": 1.75,
+      "inserts": null,
+      "image": "images/aquamarine/77378.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1260.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_217914",
+      "article": "77379А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 2.9,
+      "avg_weight": 2.9,
+      "inserts": null,
+      "image": "images/aquamarine/77379А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2088.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_226505",
+      "article": "77391А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 2.25,
+      "avg_weight": 2.25,
+      "inserts": null,
+      "image": "images/aquamarine/77391А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1384.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_230178",
+      "article": "77399А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Золото 585",
+      "metal_display": "Золото 585 красное",
+      "weight": 2.5,
+      "avg_weight": 2.5,
+      "inserts": null,
+      "image": "images/aquamarine/77399А.1.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 24288.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_230179",
+      "article": "77399А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 2.13,
+      "avg_weight": 2.13,
+      "inserts": null,
+      "image": "images/aquamarine/77399А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1310.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_231317",
+      "article": "77403А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 2.86,
+      "avg_weight": 2.86,
+      "inserts": null,
+      "image": "images/aquamarine/77403А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1759.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_230709",
+      "article": "77405",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 2.51,
+      "avg_weight": 2.51,
+      "inserts": null,
+      "image": "images/aquamarine/77405.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1431.0,
+          "weight": null
+        }
+      ]
+    },
+    {
       "id": "a_231178",
       "article": "77410А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 1.24,
@@ -29551,7 +29261,7 @@
       "article": "77410А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Золото 585",
       "metal_display": "Золото 585 красное",
       "weight": 1.46,
@@ -29568,22 +29278,421 @@
       ]
     },
     {
-      "id": "a_259508",
-      "article": "77467А",
+      "id": "a_235804",
+      "article": "77412А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
-      "weight": 1.03,
-      "avg_weight": 1.03,
+      "weight": 3.25,
+      "avg_weight": 3.25,
       "inserts": null,
-      "image": "images/aquamarine/77467А.5.webp",
+      "image": "images/aquamarine/77412А.5.webp",
       "sizes_in_stock": [],
       "sizes_on_order": [
         {
           "size": null,
-          "price": 608.0,
+          "price": 1999.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_239369",
+      "article": "77413",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 4.12,
+      "avg_weight": 4.12,
+      "inserts": null,
+      "image": "images/aquamarine/77413.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2348.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_239372",
+      "article": "77425А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 1.72,
+      "avg_weight": 1.72,
+      "inserts": null,
+      "image": "images/aquamarine/77425А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1058.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_12393726",
+      "article": "77425А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 золочение",
+      "weight": 1.72,
+      "avg_weight": 1.72,
+      "inserts": null,
+      "image": "images/aquamarine/77425А.6.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1058.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_242687",
+      "article": "77427А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 2.48,
+      "avg_weight": 2.48,
+      "inserts": null,
+      "image": "images/aquamarine/77427А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1525.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_246584",
+      "article": "77428А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 4.2,
+      "avg_weight": 4.2,
+      "inserts": null,
+      "image": "images/aquamarine/77428А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2583.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_12465846",
+      "article": "77428А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 золочение",
+      "weight": 4.2,
+      "avg_weight": 4.2,
+      "inserts": null,
+      "image": "images/aquamarine/77428А.6.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2583.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_251262",
+      "article": "77430",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 1.61,
+      "avg_weight": 1.61,
+      "inserts": null,
+      "image": "images/aquamarine/77430.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 918.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_252886",
+      "article": "77431А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 3.01,
+      "avg_weight": 3.01,
+      "inserts": null,
+      "image": "images/aquamarine/77431А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1851.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_252889",
+      "article": "77432А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 3.3,
+      "avg_weight": 3.3,
+      "inserts": null,
+      "image": "images/aquamarine/77432А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2030.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_252890",
+      "article": "77433А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 2.1,
+      "avg_weight": 2.1,
+      "inserts": null,
+      "image": "images/aquamarine/77433А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1292.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_252892",
+      "article": "77439",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 1.6,
+      "avg_weight": 1.6,
+      "inserts": null,
+      "image": "images/aquamarine/77439.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 912.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_254017",
+      "article": "77444А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 2.55,
+      "avg_weight": 2.55,
+      "inserts": null,
+      "image": "images/aquamarine/77444А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1568.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_12540176",
+      "article": "77444А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 золочение",
+      "weight": 2.55,
+      "avg_weight": 2.55,
+      "inserts": null,
+      "image": "images/aquamarine/77444А.6.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1568.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_257311",
+      "article": "77445А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 3.85,
+      "avg_weight": 3.85,
+      "inserts": "11 Фианит",
+      "image": "images/aquamarine/77445А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2368.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_12573116",
+      "article": "77445А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 золочение",
+      "weight": 3.85,
+      "avg_weight": 3.85,
+      "inserts": "11 Фианит",
+      "image": "images/aquamarine/77445А.6.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2368.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_257313",
+      "article": "77457А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 5.0,
+      "avg_weight": 5.0,
+      "inserts": null,
+      "image": "images/aquamarine/77457А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 3075.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_261041",
+      "article": "77458А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 4.27,
+      "avg_weight": 4.27,
+      "inserts": null,
+      "image": "images/aquamarine/77458А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2626.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_258536",
+      "article": "77459",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 3.4,
+      "avg_weight": 3.4,
+      "inserts": null,
+      "image": "images/aquamarine/77459.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1938.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_259475",
+      "article": "77460Г",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 2.47,
+      "avg_weight": 2.47,
+      "inserts": "2 Наноизумруд",
+      "image": "images/aquamarine/77460Г.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1544.0,
           "weight": null
         }
       ]
@@ -29593,7 +29702,7 @@
       "article": "77467А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Золото 585",
       "metal_display": "Золото 585 красное",
       "weight": 1.21,
@@ -29614,7 +29723,7 @@
       "article": "77469А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 0.84,
@@ -29631,22 +29740,358 @@
       ]
     },
     {
-      "id": "a_265605",
-      "article": "77487Н",
+      "id": "a_260831",
+      "article": "77471АГЧ",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
-      "weight": 1.57,
-      "avg_weight": 1.57,
-      "inserts": "2 Наносапфир; 2 Наносапфир",
-      "image": "images/aquamarine/77487Н.5.webp",
+      "weight": 2.94,
+      "avg_weight": 2.94,
+      "inserts": null,
+      "image": "images/aquamarine/77471АГЧ.5.webp",
       "sizes_in_stock": [],
       "sizes_on_order": [
         {
           "size": null,
-          "price": 973.0,
+          "price": 1882.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_262256",
+      "article": "7747292А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 2.8,
+      "avg_weight": 2.8,
+      "inserts": "1 Нанотопаз лондон иск.; 23 Фианит",
+      "image": "images/aquamarine/7747292А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1928.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_263608",
+      "article": "77473АБ",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 3.65,
+      "avg_weight": 3.65,
+      "inserts": "1 Наносапфир; 47 Фианит; Эмаль",
+      "image": "images/aquamarine/77473АБ.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2354.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_263383",
+      "article": "77474Г",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 3.95,
+      "avg_weight": 3.95,
+      "inserts": "1 Наноизумруд; 38 Наноизумруд; Эмаль",
+      "image": "images/aquamarine/77474Г.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2528.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_264417",
+      "article": "7747830АЧ",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 4.55,
+      "avg_weight": 4.55,
+      "inserts": "5 Топаз Свисс Блю; 5 Аметист; 27 Фианит; 2 Нанокристалл; 12 Фианит; 4 Фианит",
+      "image": "images/aquamarine/7747830АЧ.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 4381.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_266460",
+      "article": "77480",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 3.2,
+      "avg_weight": 3.2,
+      "inserts": null,
+      "image": "images/aquamarine/77480.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1824.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_12664606",
+      "article": "77480",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 золочение",
+      "weight": 3.2,
+      "avg_weight": 3.2,
+      "inserts": null,
+      "image": "images/aquamarine/77480.6.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1824.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_265147",
+      "article": "77481АЧ",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 3.55,
+      "avg_weight": 3.55,
+      "inserts": null,
+      "image": "images/aquamarine/77481АЧ.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2219.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_266228",
+      "article": "77484А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 3.5,
+      "avg_weight": 3.5,
+      "inserts": null,
+      "image": "images/aquamarine/77484А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2065.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_12662286",
+      "article": "77484А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 золочение",
+      "weight": 3.5,
+      "avg_weight": 3.5,
+      "inserts": null,
+      "image": "images/aquamarine/77484А.6.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2065.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_265150",
+      "article": "77485А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 2.95,
+      "avg_weight": 2.95,
+      "inserts": null,
+      "image": "images/aquamarine/77485А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1814.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_265562",
+      "article": "77486А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 золочение",
+      "weight": 2.1,
+      "avg_weight": 2.1,
+      "inserts": null,
+      "image": "images/aquamarine/77486А.6.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1292.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_266463",
+      "article": "77501А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 3.65,
+      "avg_weight": 3.65,
+      "inserts": null,
+      "image": "images/aquamarine/77501А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2245.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_12664636",
+      "article": "77501А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 золочение",
+      "weight": 3.65,
+      "avg_weight": 3.65,
+      "inserts": null,
+      "image": "images/aquamarine/77501А.6.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2245.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_267120",
+      "article": "77502А",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 3.5,
+      "avg_weight": 3.5,
+      "inserts": null,
+      "image": "images/aquamarine/77502А.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 2153.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_265821",
+      "article": "77503",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 3.25,
+      "avg_weight": 3.25,
+      "inserts": null,
+      "image": "images/aquamarine/77503.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1852.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_12658216",
+      "article": "77503",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 золочение",
+      "weight": 3.25,
+      "avg_weight": 3.25,
+      "inserts": null,
+      "image": "images/aquamarine/77503.6.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 1852.0,
           "weight": null
         }
       ]
@@ -29656,7 +30101,7 @@
       "article": "77508А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 золочение",
       "weight": 1.4,
@@ -29677,7 +30122,7 @@
       "article": "77511А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 1.1,
@@ -29698,7 +30143,7 @@
       "article": "77511А",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 золочение",
       "weight": 1.1,
@@ -29719,7 +30164,7 @@
       "article": "77517АЧ",
       "source": "aquamarine",
       "status": "order",
-      "type": "Булавка",
+      "type": "Броши и Булавки",
       "metal_group": "Серебро 925",
       "metal_display": "Серебро 925 родирование",
       "weight": 1.12,
@@ -29731,6 +30176,27 @@
         {
           "size": null,
           "price": 700.0,
+          "weight": null
+        }
+      ]
+    },
+    {
+      "id": "a_267826",
+      "article": "77532",
+      "source": "aquamarine",
+      "status": "order",
+      "type": "Броши и Булавки",
+      "metal_group": "Серебро 925",
+      "metal_display": "Серебро 925 родирование",
+      "weight": 6.82,
+      "avg_weight": 6.82,
+      "inserts": null,
+      "image": "images/aquamarine/77532.5.webp",
+      "sizes_in_stock": [],
+      "sizes_on_order": [
+        {
+          "size": null,
+          "price": 3887.0,
           "weight": null
         }
       ]
@@ -45630,32 +46096,6 @@
         {
           "size": "19.5",
           "price": 1261.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_265488",
-      "article": "600767А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Кольцо",
-      "metal_group": "Золото 585",
-      "metal_display": "Золото 585 красное",
-      "weight": 1.58,
-      "avg_weight": 1.58,
-      "inserts": null,
-      "image": "images/aquamarine/600767А.1.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": "17",
-          "price": 15350.0,
-          "weight": null
-        },
-        {
-          "size": "17.5",
-          "price": 15350.0,
           "weight": null
         }
       ]
@@ -86198,27 +86638,6 @@
       ]
     },
     {
-      "id": "a_20216",
-      "article": "11822",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Крест",
-      "metal_group": "Золото 585",
-      "metal_display": "Золото 585 красное",
-      "weight": 1.41,
-      "avg_weight": 1.41,
-      "inserts": null,
-      "image": "images/aquamarine/11822.1.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 13635.0,
-          "weight": null
-        }
-      ]
-    },
-    {
       "id": "a_20226",
       "article": "11827",
       "source": "aquamarine",
@@ -94178,27 +94597,6 @@
       ]
     },
     {
-      "id": "a_223620",
-      "article": "75568",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Пирсинг",
-      "metal_group": "Золото 585",
-      "metal_display": "Золото 585 красное",
-      "weight": 0.15,
-      "avg_weight": 0.15,
-      "inserts": null,
-      "image": "images/aquamarine/75568.1.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1472.0,
-          "weight": null
-        }
-      ]
-    },
-    {
       "id": "a_231185",
       "article": "75574А",
       "source": "aquamarine",
@@ -95622,27 +96020,6 @@
         {
           "size": null,
           "price": 859.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_182038",
-      "article": "14756",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Подвеска",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 1.32,
-      "avg_weight": 1.32,
-      "inserts": null,
-      "image": "images/aquamarine/14756.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 746.0,
           "weight": null
         }
       ]
@@ -97538,27 +97915,6 @@
       ]
     },
     {
-      "id": "a_22201",
-      "article": "20419А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Подвеска",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 3.32,
-      "avg_weight": 3.32,
-      "inserts": null,
-      "image": "images/aquamarine/20419А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1892.0,
-          "weight": null
-        }
-      ]
-    },
-    {
       "id": "a_291",
       "article": "20481",
       "source": "aquamarine",
@@ -98562,27 +98918,6 @@
         {
           "size": null,
           "price": 1043.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_69436",
-      "article": "22215А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Подвеска",
-      "metal_group": "Серебро 925",
-      "metal_display": "Серебро 925 родирование",
-      "weight": 1.87,
-      "avg_weight": 1.87,
-      "inserts": null,
-      "image": "images/aquamarine/22215А.5.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 1066.0,
           "weight": null
         }
       ]
@@ -130445,27 +130780,6 @@
       ]
     },
     {
-      "id": "a_267790",
-      "article": "401100А",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Серьги",
-      "metal_group": "Золото 585",
-      "metal_display": "Золото 585 красное",
-      "weight": 2.34,
-      "avg_weight": 2.34,
-      "inserts": null,
-      "image": "images/aquamarine/401100А.1.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 22733.0,
-          "weight": null
-        }
-      ]
-    },
-    {
       "id": "a_267792",
       "article": "401101А",
       "source": "aquamarine",
@@ -133212,27 +133526,6 @@
         {
           "size": null,
           "price": 1168.0,
-          "weight": null
-        }
-      ]
-    },
-    {
-      "id": "a_32850",
-      "article": "43069",
-      "source": "aquamarine",
-      "status": "order",
-      "type": "Серьги",
-      "metal_group": "Золото 585",
-      "metal_display": "Золото 585 красное",
-      "weight": 2.58,
-      "avg_weight": 2.58,
-      "inserts": null,
-      "image": "images/aquamarine/43069.1.webp",
-      "sizes_in_stock": [],
-      "sizes_on_order": [
-        {
-          "size": null,
-          "price": 25039.0,
           "weight": null
         }
       ]
